@@ -185,7 +185,7 @@ NSString *const PFFacebookUserAuthenticationType = @"facebook";
     self.session = FBSession.activeSession = sessionProxy;
 }
 
-- (BOOL)restoreAuthenticationWithAuthData:(nullable NSDictionary<NSString *,NSString *> *)authData {
+- (BOOL)restoreAuthenticationWithAuthData:(nullable NSDictionary PF_GENERIC(NSString *,NSString *)*)authData {
     if (!authData) {
         OSAtomicIncrement32(&_currentOperationId);
         self.tokenCache.facebookId = nil;
