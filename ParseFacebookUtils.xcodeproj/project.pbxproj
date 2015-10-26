@@ -13,10 +13,10 @@
 		813DFC8B1AB2510300F25A08 /* PFFacebookUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 813DFC851AB2510300F25A08 /* PFFacebookUtils.m */; };
 		813DFC931AB2515A00F25A08 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813DFC921AB2515A00F25A08 /* Bolts.framework */; };
 		813DFC951AB251F700F25A08 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813DFC941AB251F700F25A08 /* Parse.framework */; };
-		815FC59A1BBF74890006AF6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 815FC5971BBF74890006AF6E /* main.m */; settings = {ASSET_TAGS = (); }; };
+		815FC59A1BBF74890006AF6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 815FC5971BBF74890006AF6E /* main.m */; };
 		81643D771AB79ABD00DD3E65 /* PFFacebookUtils_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 81643D761AB79ABD00DD3E65 /* PFFacebookUtils_Private.h */; };
 		81643D7D1AB79DCE00DD3E65 /* PFFacebookAuthenticationProvider_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 81643D7C1AB79DCE00DD3E65 /* PFFacebookAuthenticationProvider_Private.h */; };
-		81930A3E1BBE1A0600A5E4BB /* PFFacebookTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 81930A3D1BBE1A0600A5E4BB /* PFFacebookTestCase.m */; settings = {ASSET_TAGS = (); }; };
+		81930A3E1BBE1A0600A5E4BB /* PFFacebookTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 81930A3D1BBE1A0600A5E4BB /* PFFacebookTestCase.m */; };
 		81B3F22B1AC9CA5300A92677 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81B3F22A1AC9CA5300A92677 /* Localizable.strings */; };
 		81CB98CC1AB7905D00136FA5 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* ParseFacebookUtilsV4.framework */; };
 		81CB98D81AB791FB00136FA5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813DFC921AB2515A00F25A08 /* Bolts.framework */; };
@@ -28,8 +28,8 @@
 		81CB98E11AB7922C00136FA5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CB98E01AB7922C00136FA5 /* SystemConfiguration.framework */; };
 		81DA69311AB25A36008C3B7F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81DA692F1AB25A36008C3B7F /* FBSDKCoreKit.framework */; };
 		81DA69321AB25A37008C3B7F /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81DA69301AB25A36008C3B7F /* FBSDKLoginKit.framework */; };
-		81E35FD41BAA6F8400348526 /* PFFacebookPrivateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 81E35FD21BAA6F8400348526 /* PFFacebookPrivateUtilities.h */; settings = {ASSET_TAGS = (); }; };
-		81E35FD51BAA6F8400348526 /* PFFacebookPrivateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E35FD31BAA6F8400348526 /* PFFacebookPrivateUtilities.m */; settings = {ASSET_TAGS = (); }; };
+		81E35FD41BAA6F8400348526 /* PFFacebookPrivateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 81E35FD21BAA6F8400348526 /* PFFacebookPrivateUtilities.h */; };
+		81E35FD51BAA6F8400348526 /* PFFacebookPrivateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E35FD31BAA6F8400348526 /* PFFacebookPrivateUtilities.m */; };
 		81EDD4B51B58AC7D002F69C0 /* ParseFacebookUtilsV4.h in Headers */ = {isa = PBXBuildFile; fileRef = 81EDD4B41B58AC7D002F69C0 /* ParseFacebookUtilsV4.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		982A9BABCF8E7DD3F3C2C18D /* libPods-ParseFacebookUtilsV4-UnitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DBE4F2899D193F056501A4 /* libPods-ParseFacebookUtilsV4-UnitTests.a */; };
 		F5E3229B1B549C2C00E319F9 /* FacebookAuthenticationProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3229A1B549C2C00E319F9 /* FacebookAuthenticationProviderTests.m */; };
@@ -426,7 +426,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = PF;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Parse, LLC";
 				TargetAttributes = {
 					81CB98C51AB7905D00136FA5 = {
