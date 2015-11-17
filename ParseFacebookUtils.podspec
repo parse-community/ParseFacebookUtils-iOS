@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ParseFacebookUtils'
-  s.version          = '1.9.0'
+  s.version          = '1.9.1'
   s.license          =  { :type => 'Commercial', :text => "See https://www.parse.com/about/terms" }
   s.homepage         = 'https://www.parse.com/'
   s.summary          = 'Parse is a complete technology stack to power your app\'s backend.'
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
                       'Social'
   s.libraries        = 'z', 'sqlite3'
 
-  s.dependency 'Bolts/Tasks', '>= 1.3.0'
+  s.dependency 'Bolts/Tasks', '~> 1.5'
   s.dependency 'Parse', '~> 1.9'
   s.dependency 'Facebook-iOS-SDK', '~> 3.24'
 end
