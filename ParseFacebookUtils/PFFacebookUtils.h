@@ -20,7 +20,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/*!
+/**
  The `PFFacebookUtils` class provides utility functions for using Facebook authentication with <PFUser>s.
 
  @warning This class supports official Facebook iOS SDK v4.0+ and is available only on iOS.
@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Interacting With Facebook
 ///--------------------------------------
 
-/*!
+/**
  @abstract Initializes Parse Facebook Utils.
 
  @discussion You must provide your Facebook application ID as the value for FacebookAppID in your bundle's plist file
@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)initializeFacebookWithApplicationLaunchOptions:(nullable NSDictionary *)launchOptions;
 
-/*!
+/**
  @abstract `FBSDKLoginManager` provides methods for configuring login behavior, default audience
  and managing Facebook Access Token.
 
@@ -55,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Logging In
 ///--------------------------------------
 
-/*!
+/**
  @abstract *Asynchronously* logs in a user using Facebook with read permissions.
 
  @discussion This method delegates to the Facebook SDK to authenticate the user,
@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BFTask PF_GENERIC(PFUser *)*)logInInBackgroundWithReadPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions;
 
-/*!
+/**
  @abstract *Asynchronously* logs in a user using Facebook with read permissions.
 
  @discussion This method delegates to the Facebook SDK to authenticate the user,
@@ -80,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)logInInBackgroundWithReadPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
                                        block:(nullable PFUserResultBlock)block;
 
-/*!
+/**
  @abstract *Asynchronously* logs in a user using Facebook with publish permissions.
 
  @discussion This method delegates to the Facebook SDK to authenticate the user,
@@ -92,7 +92,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BFTask PF_GENERIC(PFUser *)*)logInInBackgroundWithPublishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions;
 
-/*!
+/**
  @abstract *Asynchronously* logs in a user using Facebook with publish permissions.
 
  @discussion This method delegates to the Facebook SDK to authenticate the user,
@@ -105,7 +105,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)logInInBackgroundWithPublishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
                                           block:(nullable PFUserResultBlock)block;
 
-/*!
+/**
  @abstract *Asynchronously* logs in a user using given Facebook Acess Token.
 
  @discussion This method delegates to the Facebook SDK to authenticate the user,
@@ -117,7 +117,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BFTask PF_GENERIC(PFUser *)*)logInInBackgroundWithAccessToken:(FBSDKAccessToken *)accessToken;
 
-/*!
+/**
  @abstract *Asynchronously* logs in a user using given Facebook Acess Token.
 
  @discussion This method delegates to the Facebook SDK to authenticate the user,
@@ -134,7 +134,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Linking Users
 ///--------------------------------------
 
-/*!
+/**
  @abstract *Asynchronously* links Facebook with read permissions to an existing <PFUser>.
 
  @discussion This method delegates to the Facebook SDK to authenticate
@@ -149,7 +149,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (BFTask PF_GENERIC(NSNumber *)*)linkUserInBackground:(PFUser *)user
                                    withReadPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions;
 
-/*!
+/**
  @abstract *Asynchronously* links Facebook with read permissions to an existing <PFUser>.
 
  @discussion This method delegates to the Facebook SDK to authenticate
@@ -165,7 +165,7 @@ NS_ASSUME_NONNULL_BEGIN
          withReadPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
                        block:(nullable PFBooleanResultBlock)block;
 
-/*!
+/**
  @abstract *Asynchronously* links Facebook with publish permissions to an existing <PFUser>.
 
  @discussion This method delegates to the Facebook SDK to authenticate
@@ -180,7 +180,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (BFTask PF_GENERIC(NSNumber *)*)linkUserInBackground:(PFUser *)user
                                 withPublishPermissions:(NSArray PF_GENERIC(NSString *)*)permissions;
 
-/*!
+/**
  @abstract *Asynchronously* links Facebook with publish permissions to an existing <PFUser>.
 
  @discussion This method delegates to the Facebook SDK to authenticate
@@ -196,7 +196,7 @@ NS_ASSUME_NONNULL_BEGIN
       withPublishPermissions:(NSArray PF_GENERIC(NSString *)*)permissions
                        block:(nullable PFBooleanResultBlock)block;
 
-/*!
+/**
  @abstract *Asynchronously* links Facebook Access Token to an existing <PFUser>.
 
  @discussion This method delegates to the Facebook SDK to authenticate
@@ -210,7 +210,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BFTask PF_GENERIC(NSNumber *)*)linkUserInBackground:(PFUser *)user withAccessToken:(FBSDKAccessToken *)accessToken;
 
-/*!
+/**
  @abstract *Asynchronously* links Facebook Access Token to an existing <PFUser>.
 
  @discussion This method delegates to the Facebook SDK to authenticate
@@ -230,7 +230,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Unlinking Users
 ///--------------------------------------
 
-/*!
+/**
  @abstract Unlinks the <PFUser> from a Facebook account *asynchronously*.
 
  @param user User to unlink from Facebook.
@@ -238,7 +238,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BFTask PF_GENERIC(NSNumber *)*)unlinkUserInBackground:(PFUser *)user;
 
-/*!
+/**
  @abstract Unlinks the <PFUser> from a Facebook account *asynchronously*.
 
  @param user User to unlink from Facebook.
@@ -251,7 +251,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Getting Linked State
 ///--------------------------------------
 
-/*!
+/**
  @abstract Whether the user has their account linked to Facebook.
 
  @param user User to check for a facebook link. The user must be logged in on this device.
