@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
  `FBSDKLoginManager` provides methods for configuring login behavior, default audience
  and managing Facebook Access Token.
 
- @returns An instance of `FBSDKLoginManager` that is used by `PFFacebookUtils`.
+ @return An instance of `FBSDKLoginManager` that is used by `PFFacebookUtils`.
  */
 + (FBSDKLoginManager *)facebookLoginManager;
 
@@ -63,7 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param permissions Array of read permissions to use.
 
- @returns The task that has will a have `result` set to `PFUser` if operation succeeds.
+ @return The task that has will a have `result` set to `PFUser` if operation succeeds.
  */
 + (BFTask PF_GENERIC(PFUser *)*)logInInBackgroundWithReadPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions;
 
@@ -88,7 +88,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param permissions Array of publish permissions to use.
 
- @returns The task that has will a have `result` set to `PFUser` if operation succeeds.
+ @return The task that has will a have `result` set to `PFUser` if operation succeeds.
  */
 + (BFTask PF_GENERIC(PFUser *)*)logInInBackgroundWithPublishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions;
 
@@ -113,7 +113,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param accessToken An instance of `FBSDKAccessToken` to use when logging in.
 
- @returns The task that has will a have `result` set to `PFUser` if operation succeeds.
+ @return The task that has will a have `result` set to `PFUser` if operation succeeds.
  */
 + (BFTask PF_GENERIC(PFUser *)*)logInInBackgroundWithAccessToken:(FBSDKAccessToken *)accessToken;
 
@@ -144,7 +144,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param user        User to link to Facebook.
  @param permissions Array of read permissions to use when logging in with Facebook.
 
- @returns The task that will have a `result` set to `@YES` if operation succeeds.
+ @return The task that will have a `result` set to `@YES` if operation succeeds.
  */
 + (BFTask PF_GENERIC(NSNumber *)*)linkUserInBackground:(PFUser *)user
                                    withReadPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions;
@@ -175,7 +175,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param user        User to link to Facebook.
  @param permissions Array of publish permissions to use.
 
- @returns The task that will have a `result` set to `@YES` if operation succeeds.
+ @return The task that will have a `result` set to `@YES` if operation succeeds.
  */
 + (BFTask PF_GENERIC(NSNumber *)*)linkUserInBackground:(PFUser *)user
                                 withPublishPermissions:(NSArray PF_GENERIC(NSString *)*)permissions;
@@ -206,7 +206,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param user        User to link to Facebook.
  @param accessToken An instance of `FBSDKAccessToken` to use.
 
- @returns The task that will have a `result` set to `@YES` if operation succeeds.
+ @return The task that will have a `result` set to `@YES` if operation succeeds.
  */
 + (BFTask PF_GENERIC(NSNumber *)*)linkUserInBackground:(PFUser *)user withAccessToken:(FBSDKAccessToken *)accessToken;
 
@@ -234,7 +234,7 @@ NS_ASSUME_NONNULL_BEGIN
  Unlinks the `PFUser` from a Facebook account *asynchronously*.
 
  @param user User to unlink from Facebook.
- @returns The task, that encapsulates the work being done.
+ @return The task, that encapsulates the work being done.
  */
 + (BFTask PF_GENERIC(NSNumber *)*)unlinkUserInBackground:(PFUser *)user;
 
@@ -256,7 +256,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param user User to check for a facebook link. The user must be logged in on this device.
 
- @returns `YES` if the user has their account linked to Facebook, otherwise `NO`.
+ @return `YES` if the user has their account linked to Facebook, otherwise `NO`.
  */
 + (BOOL)isLinkedWithUser:(PFUser *)user;
 
