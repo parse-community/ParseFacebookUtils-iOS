@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Initializes Parse Facebook Utils.
 
- @discussion You must provide your Facebook application ID as the value for FacebookAppID in your bundle's plist file
+ You must provide your Facebook application ID as the value for FacebookAppID in your bundle's plist file
  as described here: https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/
 
  @warning You must invoke this in order to use the Facebook functionality in Parse.
@@ -58,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *Asynchronously* logs in a user using Facebook with read permissions.
 
- @discussion This method delegates to the Facebook SDK to authenticate the user,
+ This method delegates to the Facebook SDK to authenticate the user,
  and then automatically logs in (or creates, in the case where it is a new user) a `PFUser`.
 
  @param permissions Array of read permissions to use.
@@ -70,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *Asynchronously* logs in a user using Facebook with read permissions.
 
- @discussion This method delegates to the Facebook SDK to authenticate the user,
+ This method delegates to the Facebook SDK to authenticate the user,
  and then automatically logs in (or creates, in the case where it is a new user) a `PFUser`.
 
  @param permissions Array of read permissions to use.
@@ -83,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *Asynchronously* logs in a user using Facebook with publish permissions.
 
- @discussion This method delegates to the Facebook SDK to authenticate the user,
+ This method delegates to the Facebook SDK to authenticate the user,
  and then automatically logs in (or creates, in the case where it is a new user) a `PFUser`.
 
  @param permissions Array of publish permissions to use.
@@ -95,7 +95,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *Asynchronously* logs in a user using Facebook with publish permissions.
 
- @discussion This method delegates to the Facebook SDK to authenticate the user,
+ This method delegates to the Facebook SDK to authenticate the user,
  and then automatically logs in (or creates, in the case where it is a new user) a `PFUser`.
 
  @param permissions Array of publish permissions to use.
@@ -108,7 +108,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *Asynchronously* logs in a user using given Facebook Acess Token.
 
- @discussion This method delegates to the Facebook SDK to authenticate the user,
+ This method delegates to the Facebook SDK to authenticate the user,
  and then automatically logs in (or creates, in the case where it is a new user) a `PFUser`.
 
  @param accessToken An instance of `FBSDKAccessToken` to use when logging in.
@@ -120,7 +120,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *Asynchronously* logs in a user using given Facebook Acess Token.
 
- @discussion This method delegates to the Facebook SDK to authenticate the user,
+ This method delegates to the Facebook SDK to authenticate the user,
  and then automatically logs in (or creates, in the case where it is a new user) a `PFUser`.
 
  @param accessToken An instance of `FBSDKAccessToken` to use when logging in.
@@ -137,7 +137,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *Asynchronously* links Facebook with read permissions to an existing `PFUser`.
 
- @discussion This method delegates to the Facebook SDK to authenticate
+ This method delegates to the Facebook SDK to authenticate
  the user, and then automatically links the account to the `PFUser`.
  It will also save any unsaved changes that were made to the `user`.
 
@@ -152,7 +152,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *Asynchronously* links Facebook with read permissions to an existing `PFUser`.
 
- @discussion This method delegates to the Facebook SDK to authenticate
+ This method delegates to the Facebook SDK to authenticate
  the user, and then automatically links the account to the `PFUser`.
  It will also save any unsaved changes that were made to the `user`.
 
@@ -168,7 +168,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *Asynchronously* links Facebook with publish permissions to an existing `PFUser`.
 
- @discussion This method delegates to the Facebook SDK to authenticate
+ This method delegates to the Facebook SDK to authenticate
  the user, and then automatically links the account to the `PFUser`.
  It will also save any unsaved changes that were made to the `user`.
 
@@ -183,7 +183,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *Asynchronously* links Facebook with publish permissions to an existing `PFUser`.
 
- @discussion This method delegates to the Facebook SDK to authenticate
+ This method delegates to the Facebook SDK to authenticate
  the user, and then automatically links the account to the `PFUser`.
  It will also save any unsaved changes that were made to the `user`.
 
@@ -199,7 +199,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *Asynchronously* links Facebook Access Token to an existing `PFUser`.
 
- @discussion This method delegates to the Facebook SDK to authenticate
+ This method delegates to the Facebook SDK to authenticate
  the user, and then automatically links the account to the `PFUser`.
  It will also save any unsaved changes that were made to the `user`.
 
@@ -213,7 +213,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *Asynchronously* links Facebook Access Token to an existing `PFUser`.
 
- @discussion This method delegates to the Facebook SDK to authenticate
+ This method delegates to the Facebook SDK to authenticate
  the user, and then automatically links the account to the `PFUser`.
  It will also save any unsaved changes that were made to the `user`.
 
