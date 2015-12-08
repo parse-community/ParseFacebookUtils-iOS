@@ -7,13 +7,10 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <Foundation/Foundation.h>
 
-#import "PFFacebookMobileAuthenticationProvider.h"
+#import "PFFacebookAuthenticationProvider.h"
 
-@interface PFFacebookUtils (Private)
-
-+ (PFFacebookMobileAuthenticationProvider *)_authenticationProvider;
-+ (void)_setAuthenticationProvider:(PFFacebookMobileAuthenticationProvider *)provider;
+@interface PFFacebookDeviceAuthenticationProvider : PFFacebookAuthenticationProvider
 
 @end

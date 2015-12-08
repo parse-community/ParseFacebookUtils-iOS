@@ -12,7 +12,7 @@
 @import FBSDKCoreKit.FBSDKAccessToken;
 @import FBSDKLoginKit.FBSDKLoginManagerLoginResult;
 
-#import "PFFacebookAuthenticationProvider_Private.h"
+#import "PFFacebookMobileAuthenticationProvider_Private.h"
 #import "PFFacebookTestCase.h"
 
 @interface FacebookAuthenticationProviderTests : PFFacebookTestCase
@@ -53,7 +53,7 @@
         handler(result, nil);
     });
 
-    PFFacebookAuthenticationProvider *provider = [[PFFacebookAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
+    PFFacebookMobileAuthenticationProvider *provider = [[PFFacebookMobileAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
     provider.loginManager = mockedLoginManager;
 
     XCTestExpectation *expectation = [self currentSelectorTestExpectation];
@@ -94,7 +94,7 @@
         handler(result, nil);
     });
 
-    PFFacebookAuthenticationProvider *provider = [[PFFacebookAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
+    PFFacebookMobileAuthenticationProvider *provider = [[PFFacebookMobileAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
     provider.loginManager = mockedLoginManager;
 
     XCTestExpectation *expectation = [self currentSelectorTestExpectation];
@@ -110,7 +110,7 @@
 - (void)testAuthenticateBoth {
     id mockedLoginManager = PFStrictClassMock([FBSDKLoginManager class]);
 
-    PFFacebookAuthenticationProvider *provider = [[PFFacebookAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
+    PFFacebookMobileAuthenticationProvider *provider = [[PFFacebookMobileAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
     provider.loginManager = mockedLoginManager;
 
     XCTestExpectation *expectation = [self currentSelectorTestExpectation];
@@ -139,7 +139,7 @@
         handler(result, nil);
     });
 
-    PFFacebookAuthenticationProvider *provider = [[PFFacebookAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
+    PFFacebookMobileAuthenticationProvider *provider = [[PFFacebookMobileAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
     provider.loginManager = mockedLoginManager;
 
     XCTestExpectation *expectation = [self currentSelectorTestExpectation];
@@ -164,7 +164,7 @@
         handler(nil, expectedError);
     });
 
-    PFFacebookAuthenticationProvider *provider = [[PFFacebookAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
+    PFFacebookMobileAuthenticationProvider *provider = [[PFFacebookMobileAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
     provider.loginManager = mockedLoginManager;
 
     XCTestExpectation *expectation = [self currentSelectorTestExpectation];
@@ -200,7 +200,7 @@
         handler(result, nil);
     });
 
-    PFFacebookAuthenticationProvider *provider = [[PFFacebookAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
+    PFFacebookMobileAuthenticationProvider *provider = [[PFFacebookMobileAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
     provider.loginManager = mockedLoginManager;
 
     XCTestExpectation *expectation = [self currentSelectorTestExpectation];
@@ -220,7 +220,7 @@
 
     id mockedLoginManager = PFStrictClassMock([FBSDKLoginManager class]);
 
-    PFFacebookAuthenticationProvider *provider = [[PFFacebookAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
+    PFFacebookMobileAuthenticationProvider *provider = [[PFFacebookMobileAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
     provider.loginManager = mockedLoginManager;
 
     XCTAssertTrue([provider restoreAuthenticationWithAuthData:authData]);
@@ -230,7 +230,7 @@
     id mockedLoginManager = PFStrictClassMock([FBSDKLoginManager class]);
     OCMExpect([mockedLoginManager logOut]);
 
-    PFFacebookAuthenticationProvider *provider = [[PFFacebookAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
+    PFFacebookMobileAuthenticationProvider *provider = [[PFFacebookMobileAuthenticationProvider alloc] initWithApplication:[UIApplication sharedApplication] launchOptions:nil];
     provider.loginManager = mockedLoginManager;
 
     XCTAssertTrue([provider restoreAuthenticationWithAuthData:nil]);

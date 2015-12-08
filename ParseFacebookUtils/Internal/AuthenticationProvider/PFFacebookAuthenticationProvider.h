@@ -9,20 +9,16 @@
 
 #import <Foundation/Foundation.h>
 
-#import <FBSDKLoginKit/FBSDKLoginManager.h>
+#import <Bolts/BFTask.h>
 
 #import <Parse/PFConstants.h>
 #import <Parse/PFUserAuthenticationDelegate.h>
-
-@class BFTask PF_GENERIC(__covariant BFGenericType);
 
 NS_ASSUME_NONNULL_BEGIN
 
 extern NSString *const PFFacebookUserAuthenticationType;
 
 @interface PFFacebookAuthenticationProvider : NSObject <PFUserAuthenticationDelegate>
-
-@property (nonatomic, strong, readonly) FBSDKLoginManager *loginManager;
 
 ///--------------------------------------
 /// @name Init
@@ -40,8 +36,11 @@ extern NSString *const PFFacebookUserAuthenticationType;
 /// @name Authenticate
 ///--------------------------------------
 
-- (BFTask *)authenticateAsyncWithReadPermissions:(nullable NSArray PF_GENERIC(NSString *) *)readPermissions
-                              publishPermissions:(nullable NSArray PF_GENERIC(NSString *) *)publishPermissions;
+- (BFTask PF_GENERIC(NSDictionary<NSString *, NSString *>*)*)authenticateAsyncWithReadPermissions:(nullable NSArray PF_GENERIC(NSString *)*)readPermissions
+                                                                               publishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)publishPermissions;
+- (BFTask PF_GENERIC(NSDictionary<NSString *, NSString *>*)*)authenticateAsyncWithReadPermissions:(nullable NSArray PF_GENERIC(NSString *)*)readPermissions
+                                                                               publishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)publishPermissions
+                                                                               fromViewComtroller:(UIViewController *)viewController;
 
 @end
 

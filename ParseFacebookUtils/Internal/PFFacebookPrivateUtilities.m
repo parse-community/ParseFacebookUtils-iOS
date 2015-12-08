@@ -9,7 +9,7 @@
 
 #import "PFFacebookPrivateUtilities.h"
 
-#import <Parse/PFConstants.h>
+#import <FBSDKCoreKit/FBSDKSettings.h>
 
 @implementation PFFacebookPrivateUtilities
 
@@ -19,6 +19,46 @@
         viewController = viewController.presentedViewController;
     }
     return viewController;
+}
+
+///--------------------------------------
+#pragma mark - User Authentication Data
+///--------------------------------------
+
++ (NSDictionary *)userAuthenticationDataWithFacebookUserId:(NSString *)userId
+                                               accessToken:(NSString *)accessToken
+                                            expirationDate:(NSDate *)expirationDate {
+    return @{ @"id" : userId,
+              @"access_token" : accessToken,
+              @"expiration_date" : [[NSDateFormatter pffb_preciseDateFormatter] stringFromDate:expirationDate] };
+}
+
++ (NSDictionary *)userAuthenticationDataFromAccessToken:(FBSDKAccessToken *)token {
+    if (!token.userID || !token.tokenString || !token.expirationDate) {
+        return nil;
+    }
+
+    return [self userAuthenticationDataWithFacebookUserId:token.userID
+                                              accessToken:token.tokenString
+                                           expirationDate:token.expirationDate];
+}
+
++ (FBSDKAccessToken *)facebookAccessTokenFromUserAuthenticationData:(nullable NSDictionary PF_GENERIC(NSString *,NSString *) *)authData {
+    NSString *accessToken = authData[@"access_token"];
+    NSString *expirationDateString = authData[@"expiration_date"];
+    if (!accessToken || !expirationDateString) {
+        return nil;
+    }
+
+    NSDate *expirationDate = [[NSDateFormatter pffb_preciseDateFormatter] dateFromString:expirationDateString];
+    FBSDKAccessToken *token = [[FBSDKAccessToken alloc] initWithTokenString:accessToken
+                                                                permissions:nil
+                                                        declinedPermissions:nil
+                                                                      appID:[FBSDKSettings appID]
+                                                                     userID:authData[@"id"]
+                                                             expirationDate:expirationDate
+                                                                refreshDate:nil];
+    return token;
 }
 
 @end
