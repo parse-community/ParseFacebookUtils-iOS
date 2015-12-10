@@ -11,6 +11,7 @@
 #include "Shared/Product/Application.xcconfig"
 
 PRODUCT_NAME = ParseFacebookTestApplicationV4
+PRODUCT_BUNDLE_IDENTIFIER = com.parse.facebookutils-ios.unit.app
 
 CLANG_ENABLE_MODULES = YES
 

@@ -12,6 +12,7 @@
 #include "Pods/Target Support Files/Pods-ParseFacebookUtilsV4-UnitTests/Pods-ParseFacebookUtilsV4-UnitTests.debug.xcconfig"
 
 PRODUCT_NAME = ParseFacebookUtilsV4-UnitTests
+PRODUCT_BUNDLE_IDENTIFIER = com.parse.facebookutils-ios.unit
 
 CLANG_ENABLE_MODULES = YES
 
