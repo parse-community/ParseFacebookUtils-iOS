@@ -22,4 +22,4 @@ FRAMEWORK_SEARCH_PATHS = $(inherited) $(SRCROOT)/Vendor
 LIBRARY_SEARCH_PATHS = $(inherited) $(BUILT_PRODUCTS_DIR)
 HEADER_SEARCH_PATHS = $(inherited) $(BUILT_PRODUCTS_DIR)
 
-OTHER_CFLAGS[sdk=iphoneos9.0] = $(inherited) -fembed-bitcode
+OTHER_CFLAGS[sdk=iphoneos9.*] = $(inherited) -fembed-bitcode
