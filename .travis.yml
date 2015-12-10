@@ -12,6 +12,7 @@ env:
   matrix:
     - TEST_TYPE=iOS
     - TEST_TYPE=CocoaPods
+    - TEST_TYPE=Package
 script:
 - |
     if [ "$TEST_TYPE" = iOS ]; then
@@ -20,6 +21,8 @@ script:
     elif [ "$TEST_TYPE" = CocoaPods ]; then
       pod lib lint ParseFacebookUtilsV4.podspec
       pod lib lint --use-libraries ParseFacebookUtilsV4.podspec
+    elif [ "$TEST_TYPE" = Package ]; then
+      bundle exec rake package:frameworks
     fi
 after_success:
 - |
