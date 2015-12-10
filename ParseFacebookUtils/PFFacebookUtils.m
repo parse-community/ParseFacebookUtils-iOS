@@ -13,9 +13,13 @@
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
-#import "PFFacebookAuthenticationProvider.h"
-#import "PFFacebookAuthenticationProvider_Private.h"
 #import "PFFacebookPrivateUtilities.h"
+
+#if TARGET_OS_IOS
+#import "PFFacebookMobileAuthenticationProvider.h"
+#elif TARGET_OS_TV
+#import "PFFacebookDeviceAuthenticationProvider.h"
+#endif
 
 @implementation PFFacebookUtils
 
@@ -45,17 +49,29 @@ static PFFacebookAuthenticationProvider *authenticationProvider_;
 
 + (void)initializeFacebookWithApplicationLaunchOptions:(NSDictionary *)launchOptions {
     if (!authenticationProvider_) {
-        PFFacebookAuthenticationProvider *provider = [PFFacebookAuthenticationProvider providerWithApplication:[UIApplication sharedApplication]
-                                                                                                 launchOptions:launchOptions];
+        Class providerClass = nil;
+#if TARGET_OS_IOS
+        providerClass = [PFFacebookMobileAuthenticationProvider class];
+#elif TARGET_OS_TV
+        providerClass = [PFFacebookDeviceAuthenticationProvider class];
+#endif
+        PFFacebookAuthenticationProvider *provider = [providerClass providerWithApplication:[UIApplication sharedApplication]
+                                                                              launchOptions:launchOptions];
         [PFUser registerAuthenticationDelegate:provider forAuthType:PFFacebookUserAuthenticationType];
 
         [self _setAuthenticationProvider:provider];
     }
 }
 
+#pragma mark iOS
+#if TARGET_OS_IOS
+
 + (FBSDKLoginManager *)facebookLoginManager {
-    return [self _authenticationProvider].loginManager;
+    PFFacebookMobileAuthenticationProvider *provider = (PFFacebookMobileAuthenticationProvider *)[self _authenticationProvider];
+    return provider.loginManager;
 }
+
+#endif
 
 ///--------------------------------------
 #pragma mark - Logging In
@@ -93,7 +109,7 @@ static PFFacebookAuthenticationProvider *authenticationProvider_;
 + (BFTask PF_GENERIC(PFUser *)*)logInInBackgroundWithAccessToken:(FBSDKAccessToken *)accessToken {
     [self _assertFacebookInitialized];
 
-    NSDictionary *authData = [PFFacebookAuthenticationProvider _userAuthenticationDataFromAccessToken:accessToken];
+    NSDictionary *authData = [PFFacebookPrivateUtilities userAuthenticationDataFromAccessToken:accessToken];
     if (!authData) {
         return [BFTask taskWithError:[NSError pffb_invalidFacebookSessionError]];
     }
@@ -138,7 +154,7 @@ static PFFacebookAuthenticationProvider *authenticationProvider_;
 + (BFTask PF_GENERIC(NSNumber *)*)linkUserInBackground:(PFUser *)user withAccessToken:(FBSDKAccessToken *)accessToken {
     [self _assertFacebookInitialized];
 
-    NSDictionary *authData = [PFFacebookAuthenticationProvider _userAuthenticationDataFromAccessToken:accessToken];
+    NSDictionary *authData = [PFFacebookPrivateUtilities userAuthenticationDataFromAccessToken:accessToken];
     if (!authData) {
         return [BFTask taskWithError:[NSError pffb_invalidFacebookSessionError]];
     }

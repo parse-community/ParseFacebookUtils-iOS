@@ -11,9 +11,9 @@
 
 #import <OCMock/OCMock.h>
 
-#import "PFFacebookAuthenticationProvider_Private.h"
 #import "PFFacebookTestCase.h"
 #import "PFFacebookUtils_Private.h"
+#import "PFFacebookPrivateUtilities.h"
 
 ///--------------------------------------
 #pragma mark - FacebookUtilsTests
@@ -67,7 +67,7 @@
 
 - (void)testLoginManager {
     id mockedLoginManager = PFStrictClassMock([FBSDKLoginManager class]);
-    id mockedAuthProvider = PFStrictClassMock([PFFacebookAuthenticationProvider class]);
+    id mockedAuthProvider = PFStrictClassMock([PFFacebookMobileAuthenticationProvider class]);
 
     OCMStub([mockedAuthProvider loginManager]).andReturn(mockedLoginManager);
 
@@ -76,7 +76,7 @@
 }
 
 - (void)testLoginReadPermissions {
-    id mockedAuthProvider = PFStrictClassMock([PFFacebookAuthenticationProvider class]);
+    id mockedAuthProvider = PFStrictClassMock([PFFacebookMobileAuthenticationProvider class]);
     OCMStub([mockedAuthProvider authenticateAsyncWithReadPermissions:@[ @"read" ] publishPermissions:nil]).andReturn([BFTask taskWithResult:@{}]);
     [PFFacebookUtils _setAuthenticationProvider:mockedAuthProvider];
 
@@ -101,7 +101,7 @@
 }
 
 - (void)testLoginWritePermissions {
-    id mockedAuthProvider = PFStrictClassMock([PFFacebookAuthenticationProvider class]);
+    id mockedAuthProvider = PFStrictClassMock([PFFacebookMobileAuthenticationProvider class]);
     OCMStub([mockedAuthProvider authenticateAsyncWithReadPermissions:nil publishPermissions:@[ @"publish" ]]).andReturn([BFTask taskWithResult:@{}]);
     [PFFacebookUtils _setAuthenticationProvider:mockedAuthProvider];
 
@@ -126,12 +126,13 @@
 }
 
 - (void)testLoginWithAccessToken {
+    id mockedPrivateUtilities = PFStrictClassMock([PFFacebookPrivateUtilities class]);
     id mockedAccessToken = PFStrictClassMock([FBSDKAccessToken class]);
-    id mockedAuthProvider = PFStrictClassMock([PFFacebookAuthenticationProvider class]);
+    id mockedAuthProvider = PFStrictClassMock([PFFacebookMobileAuthenticationProvider class]);
     [PFFacebookUtils _setAuthenticationProvider:mockedAuthProvider];
 
     // NOTE: (richardross) Until we decouple user login with auth data, we can only mock error cases here.
-    OCMStub([mockedAuthProvider _userAuthenticationDataFromAccessToken:mockedAccessToken]).andReturn(nil);
+    OCMStub(ClassMethod([mockedPrivateUtilities userAuthenticationDataFromAccessToken:mockedAccessToken])).andReturn(nil);
 
     XCTestExpectation *taskExpectation = [self expectationWithDescription:@"task"];
     [[PFFacebookUtils logInInBackgroundWithAccessToken:mockedAccessToken] continueWithBlock:^id(BFTask *task) {
@@ -154,7 +155,7 @@
 
 - (void)testLinkWithReadPermissions {
     id mockedUser = PFStrictClassMock([PFUser class]);
-    id mockedAuthProvider = PFStrictClassMock([PFFacebookAuthenticationProvider class]);
+    id mockedAuthProvider = PFStrictClassMock([PFFacebookMobileAuthenticationProvider class]);
 
     OCMStub([mockedAuthProvider authenticateAsyncWithReadPermissions:@[ @"read" ] publishPermissions:nil]).andReturn([BFTask taskWithResult:@{}]);
     [PFFacebookUtils _setAuthenticationProvider:mockedAuthProvider];
@@ -179,7 +180,7 @@
 
 - (void)testLinkWithWritePermissions {
     id mockedUser = PFStrictClassMock([PFUser class]);
-    id mockedAuthProvider = PFStrictClassMock([PFFacebookAuthenticationProvider class]);
+    id mockedAuthProvider = PFStrictClassMock([PFFacebookMobileAuthenticationProvider class]);
 
     OCMStub([mockedAuthProvider authenticateAsyncWithReadPermissions:nil publishPermissions:@[ @"publish" ]]).andReturn([BFTask taskWithResult:@{}]);
     [PFFacebookUtils _setAuthenticationProvider:mockedAuthProvider];
@@ -202,12 +203,13 @@
 }
 
 - (void)testLinkWithAccessToken {
+    id mockedPrivateUtilities = PFStrictClassMock([PFFacebookPrivateUtilities class]);
     id mockedAccessToken = PFStrictClassMock([FBSDKAccessToken class]);
     id mockedUser = PFStrictClassMock([PFUser class]);
-    id mockedAuthProvider = PFStrictClassMock([PFFacebookAuthenticationProvider class]);
+    id mockedAuthProvider = PFStrictClassMock([PFFacebookMobileAuthenticationProvider class]);
 
     NSDictionary *sampleAuthData = [self sampleAuthData];
-    OCMStub([mockedAuthProvider _userAuthenticationDataFromAccessToken:mockedAccessToken]).andReturn(sampleAuthData);
+    OCMStub(ClassMethod([mockedPrivateUtilities userAuthenticationDataFromAccessToken:mockedAccessToken])).andReturn(sampleAuthData);
 
     [PFFacebookUtils _setAuthenticationProvider:mockedAuthProvider];
     [OCMStub([mockedUser linkWithAuthTypeInBackground:@"facebook" authData:sampleAuthData]) andReturn:[BFTask taskWithResult:@YES]];
@@ -230,7 +232,7 @@
 
 - (void)testUnlink {
     id mockedLinkedUser = PFStrictClassMock([PFUser class]);
-    id mockedAuthProvider = PFStrictClassMock([PFFacebookAuthenticationProvider class]);
+    id mockedAuthProvider = PFStrictClassMock([PFFacebookMobileAuthenticationProvider class]);
 
     [PFFacebookUtils _setAuthenticationProvider:mockedAuthProvider];
     [OCMStub([mockedLinkedUser unlinkWithAuthTypeInBackground:@"facebook"]) andReturn:[BFTask taskWithResult:@YES]];

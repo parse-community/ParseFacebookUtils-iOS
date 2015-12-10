@@ -22,3 +22,6 @@ Vendor/Parse.framework
 Vendor/Bolts.framework
 Vendor/FBSDKCoreKit.framework
 Vendor/FBSDKLoginKit.framework
+
+Vendor/tvOS/FBSDKCoreKit.framework
+Vendor/tvOS/FBSDKTVOSKit.framework

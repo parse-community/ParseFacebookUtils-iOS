@@ -15,20 +15,24 @@ Pod::Spec.new do |s|
   s.public_header_files = 'ParseFacebookUtils/*.h'
   s.source_files = 'ParseFacebookUtils/**/*.{h,m}'
 
+  s.ios.exclude_files = 'ParseFacebookUtils/Internal/AuthenticationProvider/tvOS/**/*.{h,m}'
+  s.tvos.exclude_files = 'ParseFacebookUtils/Internal/AuthenticationProvider/iOS/**/*.{h,m}'
+
   s.frameworks        = 'AudioToolbox',
                         'CFNetwork',
                         'CoreGraphics',
                         'CoreLocation',
                         'QuartzCore',
                         'Security',
-                        'StoreKit',
                         'SystemConfiguration'
-  s.weak_frameworks = 'Accounts',
-                      'Social'
+  s.ios.weak_frameworks = 'Accounts',
+                          'Social'
   s.libraries        = 'z', 'sqlite3'
 
   s.dependency 'Bolts/Tasks', '>= 1.5'
-  s.dependency 'Parse', '~> 1.9'
-  s.dependency 'FBSDKCoreKit', '~> 4.8'
-  s.dependency 'FBSDKLoginKit', '~> 4.8'
+  s.dependency 'Parse', '~> 1.10'
+  s.dependency 'FBSDKCoreKit', '~> 4.9.0-beta'
+
+  s.ios.dependency 'FBSDKLoginKit', '~> 4.9.0-beta'
+  s.tvos.dependency 'FBSDKTVOSKit', '~> 4.9.0-beta'
 end

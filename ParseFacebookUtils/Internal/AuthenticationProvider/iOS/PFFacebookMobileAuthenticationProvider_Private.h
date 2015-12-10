@@ -9,17 +9,12 @@
 
 #import <FBSDKLoginKit/FBSDKLoginManager.h>
 
-#import "PFFacebookAuthenticationProvider.h"
+#import "PFFacebookMobileAuthenticationProvider.h"
 
 @class FBSDKAccessToken;
 
-@interface PFFacebookAuthenticationProvider ()
+@interface PFFacebookMobileAuthenticationProvider ()
 
 @property (nonatomic, strong, readwrite) FBSDKLoginManager *loginManager;
-
-+ (NSDictionary *)_userAuthenticationDataWithFacebookUserId:(NSString *)userId
-                                                accessToken:(NSString *)accessToken
-                                             expirationDate:(NSDate *)expirationDate;
-+ (NSDictionary *)_userAuthenticationDataFromAccessToken:(FBSDKAccessToken *)token;
 
 @end

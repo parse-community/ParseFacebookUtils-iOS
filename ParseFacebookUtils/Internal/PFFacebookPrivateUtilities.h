@@ -13,11 +13,26 @@
 #import <Bolts/BFExecutor.h>
 #import <Bolts/BFTask.h>
 
+#import <FBSDKCoreKit/FBSDKAccessToken.h>
+
 #import <Parse/PFConstants.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface PFFacebookPrivateUtilities : NSObject
 
 + (UIViewController *)applicationTopViewController;
+
+///--------------------------------------
+/// @name User Authentication Data
+///--------------------------------------
+
++ (NSDictionary *)userAuthenticationDataWithFacebookUserId:(NSString *)userId
+                                                accessToken:(NSString *)accessToken
+                                             expirationDate:(NSDate *)expirationDate;
++ (NSDictionary *)userAuthenticationDataFromAccessToken:(FBSDKAccessToken *)token;
+
++ (FBSDKAccessToken *)facebookAccessTokenFromUserAuthenticationData:(nullable NSDictionary PF_GENERIC(NSString *,NSString *) *)authData;
 
 @end
 
@@ -40,3 +55,5 @@
 + (instancetype)pffb_preciseDateFormatter;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -11,12 +11,14 @@
 
 #import <Bolts/BFTask.h>
 
-#import <FBSDKCoreKit/FBSDKAccessToken.h>
-
-#import <FBSDKLoginKit/FBSDKLoginManager.h>
-
 #import <Parse/PFConstants.h>
 #import <Parse/PFUser.h>
+
+#import <FBSDKCoreKit/FBSDKAccessToken.h>
+
+#if TARGET_OS_IOS
+#import <FBSDKLoginKit/FBSDKLoginManager.h>
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -43,13 +45,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)initializeFacebookWithApplicationLaunchOptions:(nullable NSDictionary *)launchOptions;
 
+#if TARGET_OS_IOS
 /**
  `FBSDKLoginManager` provides methods for configuring login behavior, default audience
  and managing Facebook Access Token.
+ 
+ @warning This method is available only on iOS.
 
  @return An instance of `FBSDKLoginManager` that is used by `PFFacebookUtils`.
  */
 + (FBSDKLoginManager *)facebookLoginManager;
+#endif
 
 ///--------------------------------------
 /// @name Logging In
