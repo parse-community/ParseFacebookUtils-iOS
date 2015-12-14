@@ -1,4 +1,4 @@
-# Parse Facebook Utils for iOS
+# Parse Facebook Utils for iOS/tvOS
 
 [![Build Status][build-status-svg]][build-status-link]
 [![Coverage Status][coverage-status-svg]][coverage-status-link]
@@ -54,7 +54,7 @@ Copyright (c) 2015-present, Parse, LLC.
 All rights reserved.
 
 This source code is licensed under the BSD-style license found in the
-LICENSE file in the root directory of this source tree. An additional grant 
+LICENSE file in the root directory of this source tree. An additional grant
 of patent rights can be found in the PATENTS file in the same directory.
 ```
 
@@ -87,4 +87,4 @@ of patent rights can be found in the PATENTS file in the same directory.
  [podspec-svg]: https://img.shields.io/cocoapods/v/ParseFacebookUtilsV4.svg
  [podspec-link]: https://cocoapods.org/pods/ParseFacebookUtilsV4
 
- [platforms-svg]: https://img.shields.io/badge/platform-ios-lightgrey.svg
+ [platforms-svg]: http://img.shields.io/cocoapods/p/ParseFacebookUtilsV4.svg?style=flat
