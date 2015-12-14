@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [ParseFacebookUtils-V4 1.10.0](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/releases/tag/v4-1.10.0) (12/14/2015)
+
+#### New
+- ParseFacebookUtils now supports tvOS. #23
+
+#### Improved
+- Updated, cleaned up and improved documentation. #22
+
 ## [ParseFacebookUtils-V4 1.9.1](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/releases/tag/v4-1.9.1) (11/17/2015)
 
 #### New

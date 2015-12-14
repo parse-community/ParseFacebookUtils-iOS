@@ -19,7 +19,6 @@ script:
       set -o pipefail
       xcodebuild test -workspace ParseFacebookUtils.xcworkspace -sdk iphonesimulator -scheme ParseFacebookUtilsV4-iOS -configuration Debug -destination "platform=iOS Simulator,name=iPhone 4s" -destination "platform=iOS Simulator,name=iPhone 6 Plus" GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty
     elif [ "$TEST_TYPE" = CocoaPods ]; then
-      pod lib lint ParseFacebookUtilsV4.podspec
       pod lib lint --use-libraries ParseFacebookUtilsV4.podspec
     elif [ "$TEST_TYPE" = Package ]; then
       bundle exec rake package:frameworks

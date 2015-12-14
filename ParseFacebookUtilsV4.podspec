@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ParseFacebookUtilsV4'
-  s.version          = '1.9.1'
+  s.version          = '1.10.0'
   s.license          =  { :type => 'Commercial', :text => "See https://www.parse.com/about/terms" }
   s.homepage         = 'https://www.parse.com/'
   s.summary          = 'Parse is a complete technology stack to power your app\'s backend.'
@@ -8,8 +8,9 @@ Pod::Spec.new do |s|
 
   s.source           = { :git => "https://github.com/ParsePlatform/ParseFacebookUtils-iOS.git", :tag => "v4-#{s.version.to_s}" }
 
-  s.platform = :ios
+  s.platform = :ios, :tvos
   s.ios.deployment_target = '7.0'
+  s.tvos.deployment_target = '9.0'
   s.requires_arc = true
 
   s.public_header_files = 'ParseFacebookUtils/*.h'
@@ -30,7 +31,7 @@ Pod::Spec.new do |s|
   s.libraries        = 'z', 'sqlite3'
 
   s.dependency 'Bolts/Tasks', '>= 1.5'
-  s.dependency 'Parse', '~> 1.10'
+  s.dependency 'Parse', '~> 1.11'
   s.dependency 'FBSDKCoreKit', '~> 4.9.0-beta'
 
   s.ios.dependency 'FBSDKLoginKit', '~> 4.9.0-beta'
