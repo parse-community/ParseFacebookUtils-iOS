@@ -42,9 +42,9 @@
 #pragma mark - Authenticate
 ///--------------------------------------
 
-- (BFTask PF_GENERIC(NSDictionary<NSString *, NSString *>*)*)authenticateAsyncWithReadPermissions:(nullable NSArray PF_GENERIC(NSString *) *)readPermissions
-                                                                               publishPermissions:(nullable NSArray PF_GENERIC(NSString *) *)publishPermissions
-                                                                               fromViewComtroller:(UIViewController *)viewController {
+- (BFTask<NSDictionary<NSString *, NSString *>*> *)authenticateAsyncWithReadPermissions:(nullable NSArray<NSString *> *)readPermissions
+                                                                     publishPermissions:(nullable NSArray<NSString *> *)publishPermissions
+                                                                     fromViewComtroller:(UIViewController *)viewController {
     if (readPermissions && publishPermissions) {
         NSException *exception = [NSException exceptionWithName:NSInvalidArgumentException
                                                          reason:@"Read permissions are not permitted to be requested with publish permissions."
@@ -78,7 +78,7 @@
 #pragma mark - PFUserAuthenticationDelegate
 ///--------------------------------------
 
-- (BOOL)restoreAuthenticationWithAuthData:(nullable NSDictionary PF_GENERIC(NSString *, NSString *) *)authData {
+- (BOOL)restoreAuthenticationWithAuthData:(nullable NSDictionary<NSString *, NSString *> *)authData {
     if (!authData) {
         [self.loginManager logOut];
     }

@@ -43,7 +43,7 @@
                                            expirationDate:token.expirationDate];
 }
 
-+ (FBSDKAccessToken *)facebookAccessTokenFromUserAuthenticationData:(nullable NSDictionary PF_GENERIC(NSString *,NSString *) *)authData {
++ (FBSDKAccessToken *)facebookAccessTokenFromUserAuthenticationData:(nullable NSDictionary<NSString *, NSString *> *)authData {
     NSString *accessToken = authData[@"access_token"];
     NSString *expirationDateString = authData[@"expiration_date"];
     if (!accessToken || !expirationDateString) {

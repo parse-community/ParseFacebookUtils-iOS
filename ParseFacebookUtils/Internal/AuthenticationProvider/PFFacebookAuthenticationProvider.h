@@ -37,11 +37,11 @@ extern NSString *const PFFacebookUserAuthenticationType;
 /// @name Authenticate
 ///--------------------------------------
 
-- (BFTask PF_GENERIC(NSDictionary<NSString *, NSString *>*)*)authenticateAsyncWithReadPermissions:(nullable NSArray PF_GENERIC(NSString *)*)readPermissions
-                                                                               publishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)publishPermissions;
-- (BFTask PF_GENERIC(NSDictionary<NSString *, NSString *>*)*)authenticateAsyncWithReadPermissions:(nullable NSArray PF_GENERIC(NSString *)*)readPermissions
-                                                                               publishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)publishPermissions
-                                                                               fromViewComtroller:(UIViewController *)viewController;
+- (BFTask<NSDictionary<NSString *, NSString *>*> *)authenticateAsyncWithReadPermissions:(nullable NSArray<NSString *> *)readPermissions
+                                                                     publishPermissions:(nullable NSArray<NSString *> *)publishPermissions;
+- (BFTask<NSDictionary<NSString *, NSString *>*> *)authenticateAsyncWithReadPermissions:(nullable NSArray<NSString *> *)readPermissions
+                                                                     publishPermissions:(nullable NSArray<NSString *> *)publishPermissions
+                                                                     fromViewComtroller:(UIViewController *)viewController;
 
 @end
 

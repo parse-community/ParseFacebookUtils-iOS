@@ -32,9 +32,9 @@
 #pragma mark - PFFacebookAuthenticationProvider
 ///--------------------------------------
 
-- (BFTask PF_GENERIC(NSDictionary<NSString *, NSString *>*)*)authenticateAsyncWithReadPermissions:(nullable NSArray PF_GENERIC(NSString *)*)readPermissions
-                                                                               publishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)publishPermissions
-                                                                               fromViewComtroller:(UIViewController *)viewController {
+- (BFTask<NSDictionary<NSString *, NSString *>*> *)authenticateAsyncWithReadPermissions:(nullable NSArray<NSString *> *)readPermissions
+                                                                     publishPermissions:(nullable NSArray<NSString *> *)publishPermissions
+                                                                     fromViewComtroller:(UIViewController *)viewController {
     return [BFTask taskFromExecutor:[BFExecutor mainThreadExecutor] withBlock:^id _Nonnull{
         if (_loginTaskCompletionSource) {
             return [NSError errorWithDomain:FBSDKErrorDomain
@@ -57,7 +57,7 @@
 #pragma mark - PFUserAuthenticationDelegate
 ///--------------------------------------
 
-- (BOOL)restoreAuthenticationWithAuthData:(nullable NSDictionary PF_GENERIC(NSString *, NSString *)*)authData {
+- (BOOL)restoreAuthenticationWithAuthData:(nullable NSDictionary<NSString *, NSString *> *)authData {
     if (!authData) {
         [FBSDKAccessToken setCurrentAccessToken:nil];
     }
@@ -76,7 +76,7 @@
 
 - (void)deviceLoginViewControllerDidFinish:(FBSDKDeviceLoginViewController *)viewController {
     FBSDKAccessToken *accessToken = [FBSDKAccessToken currentAccessToken];
-    NSDictionary PF_GENERIC(NSString *,NSString*) *result = [PFFacebookPrivateUtilities userAuthenticationDataFromAccessToken:accessToken];
+    NSDictionary<NSString *,NSString*> *result = [PFFacebookPrivateUtilities userAuthenticationDataFromAccessToken:accessToken];
     [_loginTaskCompletionSource trySetResult:result];
     _loginViewController = nil;
     _loginTaskCompletionSource = nil;

@@ -16,7 +16,7 @@
 
 #import "PFFacebookAuthenticationProvider.h"
 
-@class BFTask PF_GENERIC(__covariant BFGenericType);
+@class BFTask<__covariant BFGenericType>;
 
 NS_ASSUME_NONNULL_BEGIN
 

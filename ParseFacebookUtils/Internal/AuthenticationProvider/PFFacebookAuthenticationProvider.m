@@ -42,16 +42,16 @@ NSString *const PFFacebookUserAuthenticationType = @"facebook";
 #pragma mark - Authenticate
 ///--------------------------------------
 
-- (BFTask PF_GENERIC(NSDictionary<NSString *, NSString *>*)*)authenticateAsyncWithReadPermissions:(nullable NSArray PF_GENERIC(NSString *)*)readPermissions
-                                                                               publishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)publishPermissions {
+- (BFTask<NSDictionary<NSString *, NSString *>*> *)authenticateAsyncWithReadPermissions:(nullable NSArray<NSString *> *)readPermissions
+                                                                     publishPermissions:(nullable NSArray<NSString *> *)publishPermissions {
     return [self authenticateAsyncWithReadPermissions:readPermissions
                                    publishPermissions:publishPermissions
                                    fromViewComtroller:[PFFacebookPrivateUtilities applicationTopViewController]];
 }
 
-- (BFTask PF_GENERIC(NSDictionary<NSString *, NSString *>*)*)authenticateAsyncWithReadPermissions:(nullable NSArray PF_GENERIC(NSString *)*)readPermissions
-                                                                               publishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)publishPermissions
-                                                                               fromViewComtroller:(UIViewController *)viewController {
+- (BFTask<NSDictionary<NSString *, NSString *>*> *)authenticateAsyncWithReadPermissions:(nullable NSArray<NSString *> *)readPermissions
+                                                                     publishPermissions:(nullable NSArray<NSString *> *)publishPermissions
+                                                                     fromViewComtroller:(UIViewController *)viewController {
     return [BFTask taskWithError:[NSError pffb_invalidFacebookSessionError]];
 }
 
@@ -59,7 +59,7 @@ NSString *const PFFacebookUserAuthenticationType = @"facebook";
 #pragma mark - PFUserAuthenticationDelegate
 ///--------------------------------------
 
-- (BOOL)restoreAuthenticationWithAuthData:(nullable NSDictionary PF_GENERIC(NSString *, NSString *)*)authData {
+- (BOOL)restoreAuthenticationWithAuthData:(nullable NSDictionary<NSString *, NSString *> *)authData {
     FBSDKAccessToken *token = [PFFacebookPrivateUtilities facebookAccessTokenFromUserAuthenticationData:authData];
     if (!token) {
         return !authData; // Only deauthenticate if authData was nil, otherwise - return failure (`NO`).
