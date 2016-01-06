@@ -93,12 +93,13 @@
 
     OCMStub([mockedSession valueForKey:@"self"]).andReturnWeak(mockedSession);
     OCMStub([[mockedSession ignoringNonObjectArgs] openWithBehavior:0
+                                                 fromViewController:nil
                                                   completionHandler:OCMOCK_ANY]).andDo(^(NSInvocation *invocation) {
         __unsafe_unretained FBSession *theSession = nil;
         __unsafe_unretained FBSessionStateHandler handler = nil;
 
         [invocation getArgument:&theSession atIndex:0];
-        [invocation getArgument:&handler atIndex:3];
+        [invocation getArgument:&handler atIndex:4];
 
         [provider.tokenCache setAccessToken:@"token"];
         [provider.tokenCache setExpirationDate:[NSDate dateWithTimeIntervalSince1970:1337]];
@@ -162,12 +163,13 @@
 
     OCMStub([mockedSession valueForKey:@"self"]).andReturnWeak(mockedSession);
     OCMStub([[mockedSession ignoringNonObjectArgs] openWithBehavior:0
+                                                 fromViewController:nil
                                                   completionHandler:OCMOCK_ANY]).andDo(^(NSInvocation *invocation) {
         __unsafe_unretained FBSession *theSession = nil;
         __unsafe_unretained FBSessionStateHandler handler = nil;
 
         [invocation getArgument:&theSession atIndex:0];
-        [invocation getArgument:&handler atIndex:3];
+        [invocation getArgument:&handler atIndex:4];
 
         [provider.tokenCache setAccessToken:@"token"];
         [provider.tokenCache setExpirationDate:[NSDate dateWithTimeIntervalSince1970:1337]];
@@ -238,12 +240,13 @@
 
     OCMStub([mockedSession valueForKey:@"self"]).andReturnWeak(mockedSession);
     OCMStub([[mockedSession ignoringNonObjectArgs] openWithBehavior:0
+                                                 fromViewController:nil
                                                   completionHandler:OCMOCK_ANY]).andDo(^(NSInvocation *invocation) {
         __unsafe_unretained FBSession *theSession = nil;
         __unsafe_unretained FBSessionStateHandler handler = nil;
 
         [invocation getArgument:&theSession atIndex:0];
-        [invocation getArgument:&handler atIndex:3];
+        [invocation getArgument:&handler atIndex:4];
 
         [provider.tokenCache setAccessToken:@"token"];
         [provider.tokenCache setExpirationDate:[NSDate dateWithTimeIntervalSince1970:1337]];
