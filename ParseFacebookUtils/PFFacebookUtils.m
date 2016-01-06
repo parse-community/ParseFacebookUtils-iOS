@@ -91,7 +91,7 @@ static PFFacebookAuthenticationProvider *provider;
 #pragma mark - Log In
 ///--------------------------------------
 
-+ (BFTask PF_GENERIC(PFUser *)*)logInWithPermissionsInBackground:(nullable NSArray PF_GENERIC(NSString *)*)permissions {
++ (BFTask<PFUser *> *)logInWithPermissionsInBackground:(nullable NSArray<NSString *> *)permissions {
     [self checkInitialization];
     provider.permissions = permissions;
 
@@ -100,12 +100,12 @@ static PFFacebookAuthenticationProvider *provider;
     }];
 }
 
-+ (void)logInWithPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
++ (void)logInWithPermissions:(nullable NSArray<NSString *> *)permissions
                        block:(nullable PFUserResultBlock)block {
     [[self logInWithPermissionsInBackground:permissions] pffb_continueWithMainThreadUserBlock:block];
 }
 
-+ (void)logInWithPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
++ (void)logInWithPermissions:(nullable NSArray<NSString *> *)permissions
                       target:(nullable id)target
                     selector:(nullable SEL)selector {
     [self logInWithPermissions:permissions block:^(PFUser *user, NSError *error) {
@@ -113,9 +113,9 @@ static PFFacebookAuthenticationProvider *provider;
     }];
 }
 
-+ (BFTask PF_GENERIC(PFUser *)*)logInWithFacebookIdInBackground:(NSString *)facebookId
-                                                    accessToken:(NSString *)accessToken
-                                                 expirationDate:(NSDate *)expirationDate {
++ (BFTask<PFUser *> *)logInWithFacebookIdInBackground:(NSString *)facebookId
+                                          accessToken:(NSString *)accessToken
+                                       expirationDate:(NSDate *)expirationDate {
     [self checkInitialization];
 
     NSDictionary *authData = [provider authDataWithFacebookId:facebookId
@@ -154,13 +154,13 @@ static PFFacebookAuthenticationProvider *provider;
 #pragma mark - Link
 ///--------------------------------------
 
-+ (void)linkUser:(PFUser *)user permissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions {
++ (void)linkUser:(PFUser *)user permissions:(nullable NSArray<NSString *> *)permissions {
     // This is misnamed `*InBackground` method. Left as is for backward compatability.
     [self linkUserInBackground:user permissions:permissions];
 }
 
-+ (BFTask PF_GENERIC(NSNumber *)*)linkUserInBackground:(PFUser *)user
-                                           permissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions {
++ (BFTask<NSNumber *> *)linkUserInBackground:(PFUser *)user
+                                 permissions:(nullable NSArray<NSString *> *)permissions {
     [self checkInitialization];
     provider.permissions = permissions;
 
@@ -170,7 +170,7 @@ static PFFacebookAuthenticationProvider *provider;
 }
 
 + (void)linkUser:(PFUser *)user
-     permissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
+     permissions:(nullable NSArray<NSString *> *)permissions
            block:(nullable PFBooleanResultBlock)block {
     [[self linkUserInBackground:user permissions:permissions] pffb_continueWithMainThreadBooleanBlock:block];
 }
@@ -184,10 +184,10 @@ static PFFacebookAuthenticationProvider *provider;
     }];
 }
 
-+ (BFTask PF_GENERIC(NSNumber *)*)linkUserInBackground:(PFUser *)user
-                                            facebookId:(NSString *)facebookId
-                                           accessToken:(NSString *)accessToken
-                                        expirationDate:(NSDate *)expirationDate {
++ (BFTask<NSNumber *> *)linkUserInBackground:(PFUser *)user
+                                  facebookId:(NSString *)facebookId
+                                 accessToken:(NSString *)accessToken
+                              expirationDate:(NSDate *)expirationDate {
     [self checkInitialization];
 
     NSDictionary *authData = [provider authDataWithFacebookId:facebookId
@@ -237,7 +237,7 @@ static PFFacebookAuthenticationProvider *provider;
     return [[[self unlinkUserInBackground:user] pffb_waitForResult:error] boolValue];
 }
 
-+ (BFTask PF_GENERIC(NSNumber *)*)unlinkUserInBackground:(PFUser *)user {
++ (BFTask<NSNumber *> *)unlinkUserInBackground:(PFUser *)user {
     [self checkInitialization];
     return [user unlinkWithAuthTypeInBackground:PFFacebookUserAuthenticationType];
 }
@@ -256,9 +256,9 @@ static PFFacebookAuthenticationProvider *provider;
 #pragma mark - Reauthorize
 ///--------------------------------------
 
-+ (BFTask PF_GENERIC(NSNumber *)*)reauthorizeUserInBackground:(PFUser *)user
-                                       withPublishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
-                                                     audience:(FBSessionDefaultAudience)audience {
++ (BFTask<NSNumber *> *)reauthorizeUserInBackground:(PFUser *)user
+                             withPublishPermissions:(nullable NSArray<NSString *> *)permissions
+                                           audience:(FBSessionDefaultAudience)audience {
     [self checkInitialization];
     if (![self isLinkedWithUser:user]) {
         [NSException raise:NSInternalInconsistencyException
@@ -273,7 +273,7 @@ static PFFacebookAuthenticationProvider *provider;
 }
 
 + (void)reauthorizeUser:(PFUser *)user
- withPublishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
+ withPublishPermissions:(nullable NSArray<NSString *> *)permissions
                audience:(FBSessionDefaultAudience)audience
                   block:(nullable PFBooleanResultBlock)block {
     [[self reauthorizeUserInBackground:user
@@ -282,7 +282,7 @@ static PFFacebookAuthenticationProvider *provider;
 }
 
 + (void)reauthorizeUser:(PFUser *)user
- withPublishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
+ withPublishPermissions:(nullable NSArray<NSString *> *)permissions
                audience:(FBSessionDefaultAudience)audience
                  target:(nullable id)target
                selector:(nullable SEL)selector {

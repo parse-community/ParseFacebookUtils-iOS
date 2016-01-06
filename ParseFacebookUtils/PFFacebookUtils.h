@@ -127,7 +127,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @returns The task, that encapsulates the work being done.
  */
-+ (BFTask PF_GENERIC(PFUser *)*)logInWithPermissionsInBackground:(nullable NSArray PF_GENERIC(NSString *)*)permissions;
++ (BFTask<PFUser *> *)logInWithPermissionsInBackground:(nullable NSArray<NSString *> *)permissions;
 
 /*!
  @abstract Logs in a user using Facebook.
@@ -143,7 +143,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param block The block to execute.
  It should have the following argument signature: `^(PFUser *user, NSError *error)`.
  */
-+ (void)logInWithPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
++ (void)logInWithPermissions:(nullable NSArray<NSString *> *)permissions
                        block:(nullable PFUserResultBlock)block;
 
 /*
@@ -161,7 +161,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param selector The selector that will be called when the asynchronous request is complete.
  It should have the following signature: `(void)callbackWithUser:(PFUser *)user error:(NSError *)error`.
  */
-+ (void)logInWithPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
++ (void)logInWithPermissions:(nullable NSArray<NSString *> *)permissions
                       target:(nullable id)target
                     selector:(nullable SEL)selector;
 
@@ -177,9 +177,9 @@ NS_ASSUME_NONNULL_BEGIN
 
  @returns The task, that encapsulates the work being done.
  */
-+ (BFTask PF_GENERIC(PFUser *)*)logInWithFacebookIdInBackground:(NSString *)facebookId
-                                                    accessToken:(NSString *)accessToken
-                                                 expirationDate:(NSDate *)expirationDate;
++ (BFTask<PFUser *> *)logInWithFacebookIdInBackground:(NSString *)facebookId
+                                          accessToken:(NSString *)accessToken
+                                       expirationDate:(NSDate *)expirationDate;
 
 /*!
  @abstract Logs in a user using Facebook *asynchronously*.
@@ -233,7 +233,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @deprecated Please use `[PFFacebookUtils linkUserInBackground:permissions:]` instead.
  */
-+ (void)linkUser:(PFUser *)user permissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions PARSE_DEPRECATED("Please use `[PFFacebookUtils linkUserInBackground:permissions:]` instead.");
++ (void)linkUser:(PFUser *)user permissions:(nullable NSArray<NSString *> *)permissions PARSE_DEPRECATED("Please use `[PFFacebookUtils linkUserInBackground:permissions:]` instead.");
 
 /*!
  @abstract Links Facebook to an existing <PFUser> *asynchronously*.
@@ -247,8 +247,8 @@ NS_ASSUME_NONNULL_BEGIN
 
  @returns The task, that encapsulates the work being done.
  */
-+ (BFTask PF_GENERIC(NSNumber *)*)linkUserInBackground:(PFUser *)user
-                                           permissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions;
++ (BFTask<NSNumber *> *)linkUserInBackground:(PFUser *)user
+                                 permissions:(nullable NSArray<NSString *> *)permissions;
 
 /*!
  @abstract Links Facebook to an existing <PFUser> *asynchronously*.
@@ -263,7 +263,7 @@ NS_ASSUME_NONNULL_BEGIN
  It should have the following argument signature: `^(BOOL *success, NSError *error)`.
  */
 + (void)linkUser:(PFUser *)user
-     permissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
+     permissions:(nullable NSArray<NSString *> *)permissions
            block:(nullable PFBooleanResultBlock)block;
 
 /*
@@ -280,7 +280,7 @@ NS_ASSUME_NONNULL_BEGIN
  It should have the following signature: `(void)callbackWithResult:(NSNumber *)result error:(NSError *)error`.
  */
 + (void)linkUser:(PFUser *)user
-     permissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
+     permissions:(nullable NSArray<NSString *> *)permissions
           target:(nullable id)target
         selector:(nullable SEL)selector;
 
@@ -297,10 +297,10 @@ NS_ASSUME_NONNULL_BEGIN
 
  @returns The task, that encapsulates the work being done.
  */
-+ (BFTask PF_GENERIC(NSNumber *)*)linkUserInBackground:(PFUser *)user
-                                            facebookId:(NSString *)facebookId
-                                           accessToken:(NSString *)accessToken
-                                        expirationDate:(NSDate *)expirationDate;
++ (BFTask<NSNumber *> *)linkUserInBackground:(PFUser *)user
+                                  facebookId:(NSString *)facebookId
+                                 accessToken:(NSString *)accessToken
+                              expirationDate:(NSDate *)expirationDate;
 
 /*!
  @abstract Links Facebook to an existing <PFUser> *asynchronously*.
@@ -371,7 +371,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param user User to unlink from Facebook.
  @returns The task, that encapsulates the work being done.
  */
-+ (BFTask PF_GENERIC(NSNumber *)*)unlinkUserInBackground:(PFUser *)user;
++ (BFTask<NSNumber *> *)unlinkUserInBackground:(PFUser *)user;
 
 /*!
  @abstract Unlinks the <PFUser> from a Facebook account *asynchronously*.
@@ -409,9 +409,9 @@ NS_ASSUME_NONNULL_BEGIN
 
  @returns The task, that encapsulates the work being done.
  */
-+ (BFTask PF_GENERIC(NSNumber *)*)reauthorizeUserInBackground:(PFUser *)user
-                                       withPublishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
-                                                     audience:(FBSessionDefaultAudience)audience;
++ (BFTask<NSNumber *> *)reauthorizeUserInBackground:(PFUser *)user
+                             withPublishPermissions:(nullable NSArray<NSString *> *)permissions
+                                           audience:(FBSessionDefaultAudience)audience;
 
 /*!
  @abstract Requests new Facebook publish permissions for the given user *asynchronously*.
@@ -427,7 +427,7 @@ NS_ASSUME_NONNULL_BEGIN
  It should have the following argument signature: `^(BOOL succeeded, NSError *error)`.
  */
 + (void)reauthorizeUser:(PFUser *)user
- withPublishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
+ withPublishPermissions:(nullable NSArray<NSString *> *)permissions
                audience:(FBSessionDefaultAudience)audience
                   block:(nullable PFBooleanResultBlock)block;
 
@@ -446,7 +446,7 @@ NS_ASSUME_NONNULL_BEGIN
  It should have the following signature: `(void)callbackWithResult:(NSNumber *)result error:(NSError *)error`.
  */
 + (void)reauthorizeUser:(PFUser *)user
- withPublishPermissions:(nullable NSArray PF_GENERIC(NSString *)*)permissions
+ withPublishPermissions:(nullable NSArray<NSString *> *)permissions
                audience:(FBSessionDefaultAudience)audience
                  target:(nullable id)target
                selector:(nullable SEL)selector;
