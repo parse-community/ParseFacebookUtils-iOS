@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [ParseFacebookUtils-V3 1.10.0](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/releases/tag/v3-1.10.0) (01/07/2016)
+
+#### New
+- ParseFacebookUtils now requires Xcode 7.0+.
+  [#36](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/pull/36)
+  by [Nikita Lutsenko](https://github.com/nlutsenko)
+
+#### Fixed
+- Fixed warnings when using deprecated Facebook SDK APIs, incompatible types.  
+  [#37](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/pull/37)
+  by [Nikita Lutsenko](https://github.com/nlutsenko)
+
 ## [ParseFacebookUtils-V3 1.9.1](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/releases/tag/v3-1.9.1) (11/17/2015)
 
 #### New
