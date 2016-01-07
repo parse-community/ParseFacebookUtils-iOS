@@ -31,12 +31,12 @@
     NSThread *_affinitizedThread;
 }
 
-- (instancetype)initWithTarget:(NSObject *)newTarget thread:(NSThread *)thread {
-    if (!newTarget) {
+- (instancetype)initWithTarget:(id)target thread:(NSThread *)thread {
+    if (!target) {
         return nil;
     }
 
-    _target = newTarget;
+    _target = target;
     _affinitizedThread = thread;
 
     return self;

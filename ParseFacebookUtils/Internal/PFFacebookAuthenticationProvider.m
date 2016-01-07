@@ -114,6 +114,7 @@ NSString *const PFFacebookUserAuthenticationType = @"facebook";
         }
     }
     [self.session openWithBehavior:behavior
+                fromViewController:nil
                  completionHandler:^(FBSession *callingSession, FBSessionState status, NSError *openError) {
                      if (called) {
                          if ((status & FBSessionStateOpenTokenExtended) == FBSessionStateOpenTokenExtended &&
@@ -235,6 +236,7 @@ NSString *const PFFacebookUserAuthenticationType = @"facebook";
 
                 if (rawSession.state == FBSessionStateCreatedTokenLoaded) {
                     [rawSession openWithBehavior:FBSessionLoginBehaviorWithNoFallbackToWebView
+                              fromViewController:nil
                                completionHandler:^(FBSession *callingSession, FBSessionState status, NSError *error) {
                                    if (!called) {
                                        if (callingSession.isOpen && self.currentOperationId == scopedOperationId) {
