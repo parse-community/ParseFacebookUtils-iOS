@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [ParseFacebookUtils-V4 1.11.0](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/releases/tag/v4-1.11.0) (01/07/2016)
+
+#### New
+- ParseFacebookUtils now requires Xcode 7.0+.
+  [#38](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/pull/38)
+  by [Nikita Lutsenko](https://github.com/nlutsenko)
+
 ## [ParseFacebookUtils-V4 1.10.0](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/releases/tag/v4-1.10.0) (12/14/2015)
 
 #### New
