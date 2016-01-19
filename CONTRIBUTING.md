@@ -7,6 +7,12 @@ Facebook has adopted a Code of Conduct that we expect project participants to ad
 ## Our Development Process
 Most of our work will be done in public directly on GitHub. There may be changes done through our internal source control, but it will be rare and only as needed.
 
+## Setup
+- Clone the project locally using `git clone`.
+- Fetch required submodules by running `git submodule update --init --recursive` in the directory.
+- `bundle install` to install necessary RubyGems.
+- Run `pod install` to fetch OCMock for testing.
+
 ### `master` is unsafe
 Our goal is to keep `master` stable, but there may be changes that your application may not be compatible with. We'll do our best to publicize any breaking changes, but try to use our specific releases in any production environment.
 
