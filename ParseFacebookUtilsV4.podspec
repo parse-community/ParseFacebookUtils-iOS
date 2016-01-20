@@ -34,6 +34,6 @@ Pod::Spec.new do |s|
   s.dependency 'Parse', '~> 1.11'
   s.dependency 'FBSDKCoreKit', '~> 4.9.0-beta'
 
-  s.ios.dependency 'FBSDKLoginKit', '~> 4.9.0-beta'
-  s.tvos.dependency 'FBSDKTVOSKit', '~> 4.9.0-beta'
+  s.ios.dependency 'FBSDKLoginKit', '~> 4.9'
+  s.tvos.dependency 'FBSDKTVOSKit', '~> 4.9'
 end
