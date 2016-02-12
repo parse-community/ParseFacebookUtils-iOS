@@ -30,10 +30,10 @@ Pod::Spec.new do |s|
                           'Social'
   s.libraries        = 'z', 'sqlite3'
 
-  s.dependency 'Bolts/Tasks', '>= 1.5'
-  s.dependency 'Parse', '~> 1.11'
-  s.dependency 'FBSDKCoreKit', '~> 4.9.0-beta'
+  s.dependency 'Bolts/Tasks', '>= 1.6'
+  s.dependency 'Parse', '~> 1.12'
+  s.dependency 'FBSDKCoreKit', '~> 4.10.0'
 
-  s.ios.dependency 'FBSDKLoginKit', '~> 4.9'
-  s.tvos.dependency 'FBSDKTVOSKit', '~> 4.9'
+  s.ios.dependency 'FBSDKLoginKit', '~> 4.10'
+  s.tvos.dependency 'FBSDKTVOSKit', '~> 4.10'
 end
