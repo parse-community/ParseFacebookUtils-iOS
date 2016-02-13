@@ -25,7 +25,7 @@ NSString *const PFFacebookUserAuthenticationType = @"facebook";
 - (instancetype)initWithApplication:(UIApplication *)application
                       launchOptions:(nullable NSDictionary *)launchOptions {
     self = [super init];
-    if (!self) return nil;
+    if (!self) return self;
 
     [[FBSDKApplicationDelegate sharedInstance] application:[UIApplication sharedApplication]
                              didFinishLaunchingWithOptions:launchOptions];
