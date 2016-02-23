@@ -3,12 +3,28 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [ParseFacebookUtils-V4 1.11.1](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/releases/tag/v4-1.11.1) (02/20/2016)
+
+#### Updated
+
+- `ParseFacebookUtilsV4` CocoaPod now uses the latest version of Facebook SDK.  
+  [#50](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/pull/50),
+  [#48](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/pull/48)
+  by [@nlutsenko](https://github.com/nlutsenko)
+
+#### Fixed
+
+- Fixed static analyzer warnings that appeared in Xcode 7.3 beta.  
+  [#51](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/pull/51)
+  by [@nlutsenko](https://github.com/nlutsenko)
+
 ## [ParseFacebookUtils-V4 1.11.0](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/releases/tag/v4-1.11.0) (01/07/2016)
 
 #### New
-- ParseFacebookUtils now requires Xcode 7.0+.
+
+- ParseFacebookUtils now requires Xcode 7.0+.  
   [#38](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/pull/38)
-  by [Nikita Lutsenko](https://github.com/nlutsenko)
+  by [@nlutsenko](https://github.com/nlutsenko)
 
 ## [ParseFacebookUtils-V4 1.10.0](https://github.com/ParsePlatform/ParseFacebookUtils-iOS/releases/tag/v4-1.10.0) (12/14/2015)
 
