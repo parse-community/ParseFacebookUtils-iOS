@@ -10,8 +10,8 @@
 #import "PFFacebookUtils.h"
 
 #import <Bolts/BFExecutor.h>
-
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <Parse/Parse.h>
 
 #import "PFFacebookPrivateUtilities.h"
 
@@ -48,6 +48,10 @@ static PFFacebookAuthenticationProvider *authenticationProvider_;
 ///--------------------------------------
 
 + (void)initializeFacebookWithApplicationLaunchOptions:(NSDictionary *)launchOptions {
+    if (![Parse currentConfiguration]) {
+        // TODO: (nlutsenko) Remove this when Parse SDK throws on every access to Parse._currentManager
+        [NSException raise:NSInternalInconsistencyException format:@"PFFacebookUtils must be initialized after initializing Parse."];
+    }
     if (!authenticationProvider_) {
         Class providerClass = nil;
 #if TARGET_OS_IOS

@@ -7,7 +7,7 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-@import Parse.PFConstants;
+@import Parse;
 
 #import <OCMock/OCMock.h>
 
@@ -57,9 +57,14 @@
 
     XCTAssertThrows([PFFacebookUtils unlinkUserInBackground:userMock]);
 
-    [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:nil];
-    XCTAssertNotNil([PFFacebookUtils _authenticationProvider]);
+    XCTAssertThrows([PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:nil]);
 
+    id parseMock = PFStrictClassMock([Parse class]);
+    id configurationMock = PFStrictClassMock([ParseClientConfiguration class]);
+    OCMStub(ClassMethod([parseMock currentConfiguration])).andReturn(configurationMock);
+
+    XCTAssertNoThrow([PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:nil]);
+    XCTAssertNotNil([PFFacebookUtils _authenticationProvider]);
     XCTAssertNoThrow([PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:nil]);
 
     OCMVerifyAll(userMock);
