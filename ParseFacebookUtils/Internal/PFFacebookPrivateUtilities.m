@@ -84,7 +84,12 @@
 }
 
 - (instancetype)pffb_continueWithMainThreadBlock:(BFContinuationBlock)block {
-    return [self continueWithExecutor:[BFExecutor mainThreadExecutor] withBlock:block];
+    return [self continueWithExecutor:[BFExecutor mainThreadExecutor] withBlock:^id(BFTask *task) {
+        if (task.exception) {
+            @throw task.exception;
+        }
+        return block(task);
+    }];
 }
 
 @end
