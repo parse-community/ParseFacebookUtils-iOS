@@ -1,0 +1,10 @@
+coverage:
+  comment: off
+  ignore:
+    - Tests/*
+  status:
+    project:
+      default:
+        target: 75
+        only_pulls: yes
+          
