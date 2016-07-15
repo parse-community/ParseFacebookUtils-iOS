@@ -8,14 +8,10 @@
 //
 
 #include "Shared/Platform/tvOS.xcconfig"
-#include "Shared/Product/Framework.xcconfig"
+#include "Shared/Product/StaticFramework.xcconfig"
 
 PRODUCT_NAME = ParseFacebookUtilsV4
 PRODUCT_BUNDLE_IDENTIFIER = com.parse.facebookutils-tvos
-
-MACH_O_TYPE = staticlib
-DEFINES_MODULE = YES
-CLANG_ENABLE_MODULES = YES
 
 INFOPLIST_FILE = $(SRCROOT)/Resources/Info-tvOS.plist
 
