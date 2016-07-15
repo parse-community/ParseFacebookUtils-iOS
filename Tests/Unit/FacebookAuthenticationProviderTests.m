@@ -115,7 +115,7 @@
 
     XCTestExpectation *expectation = [self currentSelectorTestExpectation];
     [[provider authenticateAsyncWithReadPermissions:@[ @"read" ] publishPermissions:@[ @"publish" ]] continueWithBlock:^id(BFTask *task) {
-        XCTAssertEqualObjects(task.exception.name, NSInvalidArgumentException);
+        XCTAssertNotNil(task.error);
         [expectation fulfill];
         return nil;
     }];

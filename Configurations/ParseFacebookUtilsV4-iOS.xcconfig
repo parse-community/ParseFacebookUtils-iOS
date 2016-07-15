@@ -8,19 +8,11 @@
 //
 
 #include "Shared/Platform/iOS.xcconfig"
-#include "Shared/Product/Framework.xcconfig"
+#include "Shared/Product/StaticFramework.xcconfig"
 
 PRODUCT_NAME = ParseFacebookUtilsV4
 PRODUCT_BUNDLE_IDENTIFIER = com.parse.facebookutils-ios
 
-MACH_O_TYPE = staticlib
-DEFINES_MODULE = YES
-CLANG_ENABLE_MODULES = YES
-
 INFOPLIST_FILE = $(SRCROOT)/Resources/Info-iOS.plist
 
 FRAMEWORK_SEARCH_PATHS = $(inherited) $(SRCROOT)/Vendor
-LIBRARY_SEARCH_PATHS = $(inherited) $(BUILT_PRODUCTS_DIR)
-HEADER_SEARCH_PATHS = $(inherited) $(BUILT_PRODUCTS_DIR)
-
-OTHER_CFLAGS[sdk=iphoneos9.*] = $(inherited) -fembed-bitcode

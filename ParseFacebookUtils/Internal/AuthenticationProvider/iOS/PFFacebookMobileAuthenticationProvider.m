@@ -46,10 +46,11 @@
                                                                      publishPermissions:(nullable NSArray<NSString *> *)publishPermissions
                                                                      fromViewComtroller:(UIViewController *)viewController {
     if (readPermissions && publishPermissions) {
-        NSException *exception = [NSException exceptionWithName:NSInvalidArgumentException
-                                                         reason:@"Read permissions are not permitted to be requested with publish permissions."
-                                                       userInfo:nil];
-        return [BFTask taskWithException:exception];
+        NSString *description = @"Read permissions are not permitted to be requested with publish permissions.";
+        NSError *error = [NSError errorWithDomain:PFParseErrorDomain
+                                             code:kPFErrorFacebookInvalidSession
+                                         userInfo:@{ NSLocalizedDescriptionKey: description }];
+        return [BFTask taskWithError:error];
     }
 
     BFTaskCompletionSource *taskCompletionSource = [BFTaskCompletionSource taskCompletionSource];

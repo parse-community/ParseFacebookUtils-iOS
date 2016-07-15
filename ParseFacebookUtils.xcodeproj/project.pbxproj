@@ -48,7 +48,7 @@
 		81FE7F7E1C17790400E6BD34 /* PFFacebookUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 813DFC851AB2510300F25A08 /* PFFacebookUtils.m */; };
 		81FE7F801C17790400E6BD34 /* PFFacebookPrivateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E35FD31BAA6F8400348526 /* PFFacebookPrivateUtilities.m */; };
 		81FE7F871C17790400E6BD34 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81B3F22A1AC9CA5300A92677 /* Localizable.strings */; };
-		982A9BABCF8E7DD3F3C2C18D /* libPods-ParseFacebookUtilsV4-UnitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DBE4F2899D193F056501A4 /* libPods-ParseFacebookUtilsV4-UnitTests.a */; };
+		F3648F2B62FE91B5B2C740C9 /* Pods_ParseFacebookUtilsV4_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2574ED5D739401DB71A44B /* Pods_ParseFacebookUtilsV4_UnitTests.framework */; };
 		F5E3229B1B549C2C00E319F9 /* FacebookAuthenticationProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3229A1B549C2C00E319F9 /* FacebookAuthenticationProviderTests.m */; };
 		F5E3229D1B5583A800E319F9 /* FacebookUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3229C1B5583A800E319F9 /* FacebookUtilsTests.m */; };
 /* End PBXBuildFile section */
@@ -71,7 +71,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02DBE4F2899D193F056501A4 /* libPods-ParseFacebookUtilsV4-UnitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ParseFacebookUtilsV4-UnitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8121EA9F1D39862400AC0B02 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		8121EAA11D39862400AC0B02 /* iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = iOS.xcconfig; sourceTree = "<group>"; };
+		8121EAA21D39862400AC0B02 /* macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = macOS.xcconfig; sourceTree = "<group>"; };
+		8121EAA31D39862400AC0B02 /* tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = tvOS.xcconfig; sourceTree = "<group>"; };
+		8121EAA41D39862400AC0B02 /* watchOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = watchOS.xcconfig; sourceTree = "<group>"; };
+		8121EAA61D39862400AC0B02 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		8121EAA71D39862400AC0B02 /* DynamicFramework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DynamicFramework.xcconfig; sourceTree = "<group>"; };
+		8121EAA81D39862400AC0B02 /* LogicTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = LogicTests.xcconfig; sourceTree = "<group>"; };
+		8121EAA91D39862400AC0B02 /* StaticFramework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticFramework.xcconfig; sourceTree = "<group>"; };
+		8121EAAB1D39862400AC0B02 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		8121EAAC1D39862400AC0B02 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		8121EAAD1D39862400AC0B02 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		813DFC841AB2510300F25A08 /* PFFacebookUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFFacebookUtils.h; sourceTree = "<group>"; };
 		813DFC851AB2510300F25A08 /* PFFacebookUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFFacebookUtils.m; sourceTree = "<group>"; };
 		813DFC921AB2515A00F25A08 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Vendor/Bolts.framework; sourceTree = "<group>"; };
@@ -79,15 +90,6 @@
 		815FC5971BBF74890006AF6E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		815FC5991BBF74890006AF6E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81643D761AB79ABD00DD3E65 /* PFFacebookUtils_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFFacebookUtils_Private.h; path = Internal/PFFacebookUtils_Private.h; sourceTree = "<group>"; };
-		8178BE9C1B716BF200051CF4 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
-		8178BE9E1B716BF200051CF4 /* iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = iOS.xcconfig; sourceTree = "<group>"; };
-		8178BE9F1B716BF300051CF4 /* OSX.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = OSX.xcconfig; sourceTree = "<group>"; };
-		8178BEA11B716BF300051CF4 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
-		8178BEA21B716BF300051CF4 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
-		8178BEA31B716BF300051CF4 /* UnitTest.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = UnitTest.xcconfig; sourceTree = "<group>"; };
-		8178BEA51B716BF300051CF4 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		8178BEA61B716BF300051CF4 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		8178BEA81B716BF300051CF4 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		81930A3C1BBE1A0600A5E4BB /* PFFacebookTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFFacebookTestCase.h; sourceTree = "<group>"; };
 		81930A3D1BBE1A0600A5E4BB /* PFFacebookTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFFacebookTestCase.m; sourceTree = "<group>"; };
 		81B3F22A1AC9CA5300A92677 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Resources/Localizable.strings; sourceTree = SOURCE_ROOT; };
@@ -116,6 +118,7 @@
 		81FE7F721C1778FC00E6BD34 /* ParseFacebookUtilsV4-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ParseFacebookUtilsV4-tvOS.xcconfig"; sourceTree = "<group>"; };
 		81FE7F8B1C17790400E6BD34 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParseFacebookUtilsV4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AAC07E0554694100DB518D /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParseFacebookUtilsV4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE2574ED5D739401DB71A44B /* Pods_ParseFacebookUtilsV4_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParseFacebookUtilsV4_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F52CD64A1B5838560051AB86 /* ParseFacebookUtilsV4-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ParseFacebookUtilsV4-iOS.xcconfig"; sourceTree = "<group>"; };
 		F52CD64B1B5838620051AB86 /* ParseFacebookUtilsV4-UnitTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ParseFacebookUtilsV4-UnitTests.xcconfig"; sourceTree = "<group>"; };
 		F52CD64C1B58386F0051AB86 /* ParseFacebookTestApplicationV4.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ParseFacebookTestApplicationV4.xcconfig; sourceTree = "<group>"; };
@@ -137,7 +140,7 @@
 				81CB98D91AB7920700136FA5 /* FBSDKCoreKit.framework in Frameworks */,
 				81CB98DA1AB7920700136FA5 /* FBSDKLoginKit.framework in Frameworks */,
 				81CB98DB1AB7920E00136FA5 /* Parse.framework in Frameworks */,
-				982A9BABCF8E7DD3F3C2C18D /* libPods-ParseFacebookUtilsV4-UnitTests.a in Frameworks */,
+				F3648F2B62FE91B5B2C740C9 /* Pods_ParseFacebookUtilsV4_UnitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +196,7 @@
 				81CB98D21AB7906D00136FA5 /* Tests */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
-				9274417D12A02673DA657222 /* Pods */,
+				8C6FD7306DE656C87CF08305 /* Pods */,
 			);
 			indentWidth = 4;
 			name = Breakpad;
@@ -204,9 +207,52 @@
 			children = (
 				813DFC8F1AB2513D00F25A08 /* User Frameworks */,
 				813DFC8E1AB2513300F25A08 /* System Frameworks */,
-				02DBE4F2899D193F056501A4 /* libPods-ParseFacebookUtilsV4-UnitTests.a */,
+				EE2574ED5D739401DB71A44B /* Pods_ParseFacebookUtilsV4_UnitTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8121EA9E1D39862400AC0B02 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8121EA9F1D39862400AC0B02 /* Common.xcconfig */,
+				8121EAA01D39862400AC0B02 /* Platform */,
+				8121EAA51D39862400AC0B02 /* Product */,
+				8121EAAA1D39862400AC0B02 /* Project */,
+				8121EAAD1D39862400AC0B02 /* Warnings.xcconfig */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		8121EAA01D39862400AC0B02 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				8121EAA11D39862400AC0B02 /* iOS.xcconfig */,
+				8121EAA21D39862400AC0B02 /* macOS.xcconfig */,
+				8121EAA31D39862400AC0B02 /* tvOS.xcconfig */,
+				8121EAA41D39862400AC0B02 /* watchOS.xcconfig */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		8121EAA51D39862400AC0B02 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				8121EAA61D39862400AC0B02 /* Application.xcconfig */,
+				8121EAA71D39862400AC0B02 /* DynamicFramework.xcconfig */,
+				8121EAA81D39862400AC0B02 /* LogicTests.xcconfig */,
+				8121EAA91D39862400AC0B02 /* StaticFramework.xcconfig */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		8121EAAA1D39862400AC0B02 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				8121EAAB1D39862400AC0B02 /* Debug.xcconfig */,
+				8121EAAC1D39862400AC0B02 /* Release.xcconfig */,
+			);
+			path = Project;
 			sourceTree = "<group>";
 		};
 		813DFC7E1AB2510300F25A08 /* ParseFacebookUtilsV4 */ = {
@@ -284,46 +330,6 @@
 				815FC5991BBF74890006AF6E /* Info.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		8178BE9B1B716BF200051CF4 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				8178BE9C1B716BF200051CF4 /* Common.xcconfig */,
-				8178BE9D1B716BF200051CF4 /* Platform */,
-				8178BEA01B716BF300051CF4 /* Product */,
-				8178BEA41B716BF300051CF4 /* Project */,
-				8178BEA81B716BF300051CF4 /* Warnings.xcconfig */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		8178BE9D1B716BF200051CF4 /* Platform */ = {
-			isa = PBXGroup;
-			children = (
-				8178BE9E1B716BF200051CF4 /* iOS.xcconfig */,
-				8178BE9F1B716BF300051CF4 /* OSX.xcconfig */,
-			);
-			path = Platform;
-			sourceTree = "<group>";
-		};
-		8178BEA01B716BF300051CF4 /* Product */ = {
-			isa = PBXGroup;
-			children = (
-				8178BEA11B716BF300051CF4 /* Application.xcconfig */,
-				8178BEA21B716BF300051CF4 /* Framework.xcconfig */,
-				8178BEA31B716BF300051CF4 /* UnitTest.xcconfig */,
-			);
-			path = Product;
-			sourceTree = "<group>";
-		};
-		8178BEA41B716BF300051CF4 /* Project */ = {
-			isa = PBXGroup;
-			children = (
-				8178BEA51B716BF300051CF4 /* Debug.xcconfig */,
-				8178BEA61B716BF300051CF4 /* Release.xcconfig */,
-			);
-			path = Project;
 			sourceTree = "<group>";
 		};
 		81930A3A1BBE1A0600A5E4BB /* Other */ = {
@@ -406,7 +412,7 @@
 			path = tvOS;
 			sourceTree = "<group>";
 		};
-		9274417D12A02673DA657222 /* Pods */ = {
+		8C6FD7306DE656C87CF08305 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -416,11 +422,11 @@
 		F52CD63A1B58383C0051AB86 /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
-				8178BE9B1B716BF200051CF4 /* Shared */,
 				F52CD64A1B5838560051AB86 /* ParseFacebookUtilsV4-iOS.xcconfig */,
 				F52CD64B1B5838620051AB86 /* ParseFacebookUtilsV4-UnitTests.xcconfig */,
 				F52CD64C1B58386F0051AB86 /* ParseFacebookTestApplicationV4.xcconfig */,
 				81FE7F721C1778FC00E6BD34 /* ParseFacebookUtilsV4-tvOS.xcconfig */,
+				8121EA9E1D39862400AC0B02 /* Shared */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -471,12 +477,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81CB98D11AB7905D00136FA5 /* Build configuration list for PBXNativeTarget "ParseFacebookUtilsV4-UnitTests" */;
 			buildPhases = (
-				947535AF3D7FE64739018338 /* Check Pods Manifest.lock */,
+				947535AF3D7FE64739018338 /* [CP] Check Pods Manifest.lock */,
 				81CB98C21AB7905D00136FA5 /* Sources */,
 				81CB98C31AB7905D00136FA5 /* Frameworks */,
 				81CB98C41AB7905D00136FA5 /* Resources */,
-				59A0049CBA9158822CB055BC /* Copy Pods Resources */,
-				A72EB79485B8A201DDE9573A /* Embed Pods Frameworks */,
+				59A0049CBA9158822CB055BC /* [CP] Copy Pods Resources */,
+				A72EB79485B8A201DDE9573A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -635,14 +641,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		59A0049CBA9158822CB055BC /* Copy Pods Resources */ = {
+		59A0049CBA9158822CB055BC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -708,14 +714,14 @@
 			shellPath = /bin/sh;
 			shellScript = "# Generate localizable strings\nfind $PROJECT_DIR -name '*.m' -print0 | xargs -0 genstrings -q -o $PROJECT_DIR/Resources\necho \"Finished converting images\"";
 		};
-		947535AF3D7FE64739018338 /* Check Pods Manifest.lock */ = {
+		947535AF3D7FE64739018338 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -723,14 +729,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A72EB79485B8A201DDE9573A /* Embed Pods Frameworks */ = {
+		A72EB79485B8A201DDE9573A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -813,7 +819,7 @@
 		};
 		1DEB922308733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8178BEA51B716BF300051CF4 /* Debug.xcconfig */;
+			baseConfigurationReference = 8121EAAB1D39862400AC0B02 /* Debug.xcconfig */;
 			buildSettings = {
 				PARSE_DIR = "$(PROJECT_DIR)/..";
 			};
@@ -821,7 +827,7 @@
 		};
 		1DEB922408733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8178BEA61B716BF300051CF4 /* Release.xcconfig */;
+			baseConfigurationReference = 8121EAAC1D39862400AC0B02 /* Release.xcconfig */;
 			buildSettings = {
 				PARSE_DIR = "$(PROJECT_DIR)/..";
 			};

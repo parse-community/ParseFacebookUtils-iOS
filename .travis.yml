@@ -13,18 +13,23 @@ env:
     - TEST_TYPE=iOS
     - TEST_TYPE=CocoaPods
     - TEST_TYPE=Package
+install:
+- |
+  bundle install
+  pod repo update --silent
+  pod install
 script:
 - |
-    if [ "$TEST_TYPE" = iOS ]; then
-      set -o pipefail
-      xcodebuild test -workspace ParseFacebookUtils.xcworkspace -sdk iphonesimulator -scheme ParseFacebookUtilsV4-iOS -configuration Debug -destination "platform=iOS Simulator,name=iPhone 4s" -destination "platform=iOS Simulator,name=iPhone 6 Plus" GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty
-    elif [ "$TEST_TYPE" = CocoaPods ]; then
-      pod lib lint --use-libraries ParseFacebookUtilsV4.podspec
-    elif [ "$TEST_TYPE" = Package ]; then
-      bundle exec rake package:frameworks
-    fi
+  if [ "$TEST_TYPE" = iOS ]; then
+    set -o pipefail
+    xcodebuild test -workspace ParseFacebookUtils.xcworkspace -sdk iphonesimulator -scheme ParseFacebookUtilsV4-iOS -configuration Debug -destination "platform=iOS Simulator,name=iPhone 4s" -destination "platform=iOS Simulator,name=iPhone 6 Plus" GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty
+  elif [ "$TEST_TYPE" = CocoaPods ]; then
+    pod lib lint --use-libraries ParseFacebookUtilsV4.podspec
+  elif [ "$TEST_TYPE" = Package ]; then
+    bundle exec rake package:frameworks
+  fi
 after_success:
 - |
-    if [ "$TEST_TYPE" = iOS ]; then
-      bash <(curl -s https://codecov.io/bash)
-    fi
+  if [ "$TEST_TYPE" = iOS ]; then
+    bash <(curl -s https://codecov.io/bash)
+  fi
