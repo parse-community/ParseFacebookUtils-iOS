@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4453A31E1D6DDB0100BBAE61 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8117C24D1D39BF180086B9FA /* OCMock.framework */; };
 		4453A31F1D6DDB0100BBAE61 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8117C1C91D39BD6B0086B9FA /* Bolts.framework */; };
 		4453A3201D6DDB0100BBAE61 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8117C1CC1D39BD6B0086B9FA /* Parse.framework */; };
 		4453A3211D6DDB0100BBAE61 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8117C1CA1D39BD6B0086B9FA /* FBSDKCoreKit.framework */; };
@@ -175,7 +174,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4453A3261D6DDB2700BBAE61 /* UIKit.framework in Frameworks */,
-				4453A31E1D6DDB0100BBAE61 /* OCMock.framework in Frameworks */,
 				4453A31F1D6DDB0100BBAE61 /* Bolts.framework in Frameworks */,
 				4453A3201D6DDB0100BBAE61 /* Parse.framework in Frameworks */,
 				4453A3211D6DDB0100BBAE61 /* FBSDKCoreKit.framework in Frameworks */,
