@@ -8,11 +8,12 @@
 //
 
 #include "Shared/Platform/iOS.xcconfig"
-#include "Shared/Product/StaticFramework.xcconfig"
+#include "Shared/Product/DynamicFramework.xcconfig"
 
 PRODUCT_NAME = ParseFacebookUtilsV4
 PRODUCT_BUNDLE_IDENTIFIER = com.parse.facebookutils-ios
 
 INFOPLIST_FILE = $(SRCROOT)/Resources/Info-iOS.plist
+IPHONEOS_DEPLOYMENT_TARGET = 8.0
 
 FRAMEWORK_SEARCH_PATHS = $(inherited) $(SRCROOT)/Carthage/Build/iOS

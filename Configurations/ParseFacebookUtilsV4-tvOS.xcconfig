@@ -8,11 +8,12 @@
 //
 
 #include "Shared/Platform/tvOS.xcconfig"
-#include "Shared/Product/StaticFramework.xcconfig"
+#include "Shared/Product/DynamicFramework.xcconfig"
 
 PRODUCT_NAME = ParseFacebookUtilsV4
 PRODUCT_BUNDLE_IDENTIFIER = com.parse.facebookutils-tvos
 
 INFOPLIST_FILE = $(SRCROOT)/Resources/Info-tvOS.plist
+IPHONEOS_DEPLOYMENT_TARGET = 8.0
 
 FRAMEWORK_SEARCH_PATHS = $(inherited) $(SRCROOT)/Carthage/Build/tvOS

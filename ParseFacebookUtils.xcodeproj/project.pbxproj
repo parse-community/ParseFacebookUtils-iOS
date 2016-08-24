@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4453A31E1D6DDB0100BBAE61 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8117C24D1D39BF180086B9FA /* OCMock.framework */; };
+		4453A31F1D6DDB0100BBAE61 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8117C1C91D39BD6B0086B9FA /* Bolts.framework */; };
+		4453A3201D6DDB0100BBAE61 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8117C1CC1D39BD6B0086B9FA /* Parse.framework */; };
+		4453A3211D6DDB0100BBAE61 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8117C1CA1D39BD6B0086B9FA /* FBSDKCoreKit.framework */; };
+		4453A3221D6DDB0100BBAE61 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8117C1CB1D39BD6B0086B9FA /* FBSDKLoginKit.framework */; };
+		4453A3261D6DDB2700BBAE61 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4453A3251D6DDB2700BBAE61 /* UIKit.framework */; };
 		8117C20D1D39BDDC0086B9FA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8117C1C91D39BD6B0086B9FA /* Bolts.framework */; };
 		8117C20E1D39BDDC0086B9FA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8117C1CC1D39BD6B0086B9FA /* Parse.framework */; };
 		8117C20F1D39BDDC0086B9FA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8117C1CA1D39BD6B0086B9FA /* FBSDKCoreKit.framework */; };
@@ -86,6 +92,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4453A3251D6DDB2700BBAE61 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8117C1C91D39BD6B0086B9FA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = SOURCE_ROOT; };
 		8117C1CA1D39BD6B0086B9FA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = SOURCE_ROOT; };
 		8117C1CB1D39BD6B0086B9FA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Carthage/Build/iOS/FBSDKLoginKit.framework; sourceTree = SOURCE_ROOT; };
@@ -167,6 +174,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4453A3261D6DDB2700BBAE61 /* UIKit.framework in Frameworks */,
+				4453A31E1D6DDB0100BBAE61 /* OCMock.framework in Frameworks */,
+				4453A31F1D6DDB0100BBAE61 /* Bolts.framework in Frameworks */,
+				4453A3201D6DDB0100BBAE61 /* Parse.framework in Frameworks */,
+				4453A3211D6DDB0100BBAE61 /* FBSDKCoreKit.framework in Frameworks */,
+				4453A3221D6DDB0100BBAE61 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +309,7 @@
 		813DFC8E1AB2513300F25A08 /* System Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4453A3251D6DDB2700BBAE61 /* UIKit.framework */,
 				81CB98E01AB7922C00136FA5 /* SystemConfiguration.framework */,
 				81CB98DE1AB7922600136FA5 /* AudioToolbox.framework */,
 				81CB98DC1AB7921C00136FA5 /* libsqlite3.dylib */,
@@ -735,6 +749,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F52CD64A1B5838560051AB86 /* ParseFacebookUtilsV4-iOS.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 			};
 			name = Debug;
 		};
@@ -742,6 +760,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F52CD64A1B5838560051AB86 /* ParseFacebookUtilsV4-iOS.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 			};
 			name = Release;
 		};
