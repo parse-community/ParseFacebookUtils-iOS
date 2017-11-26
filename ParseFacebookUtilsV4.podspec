@@ -1,10 +1,11 @@
 Pod::Spec.new do |s|
   s.name             = 'ParseFacebookUtilsV4'
   s.version          = '1.11.1'
-  s.license          =  { :type => 'Commercial', :text => "See https://www.parse.com/about/terms" }
-  s.homepage         = 'https://www.parse.com/'
+  s.license          =  { :type => 'BSD' }
+  s.homepage         = 'http://parseplatform.org/'
   s.summary          = 'Parse is a complete technology stack to power your app\'s backend.'
-  s.authors          = 'Parse'
+  s.authors          = 'Parse Community'
+  s.social_media_url = 'https://twitter.com/ParsePlatform'
 
   s.source           = { :git => "https://github.com/ParsePlatform/ParseFacebookUtils-iOS.git", :tag => "v4-#{s.version.to_s}" }
 
