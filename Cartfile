@@ -1,0 +1,2 @@
+github "facebook/facebook-ios-sdk" ~> 4.14
+github "ParsePlatform/Parse-SDK-iOS-OSX" ~> 1.14

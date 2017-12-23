@@ -9,14 +9,13 @@
 
 #include "Shared/Platform/iOS.xcconfig"
 #include "Shared/Product/LogicTests.xcconfig"
-#include "Pods/Target Support Files/Pods-ParseFacebookUtilsV4-UnitTests/Pods-ParseFacebookUtilsV4-UnitTests.debug.xcconfig"
 
 PRODUCT_NAME = ParseFacebookUtilsV4-UnitTests
 PRODUCT_BUNDLE_IDENTIFIER = com.parse.facebookutils-ios.unit
 
 IPHONEOS_DEPLOYMENT_TARGET = 8.0
 
-FRAMEWORK_SEARCH_PATHS = $(inherited) $(BUILT_PRODUCTS_DIR) $(SRCROOT)/Vendor "$PODS_CONFIGURATION_BUILD_DIR/OCMock"
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(SRCROOT)/Carthage/Build/iOS
 
 INFOPLIST_FILE = $(SRCROOT)/Tests/Resources/Info.plist
 TEST_HOST = $(BUILT_PRODUCTS_DIR)/ParseFacebookTestApplicationV4.app/ParseFacebookTestApplicationV4
