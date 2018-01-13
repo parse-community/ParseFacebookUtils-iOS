@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/ParsePlatform/ParseFacebookUtils-iOS.git", :tag => "v4-#{s.version.to_s}" }
 
   s.platform = :ios, :tvos
-  s.ios.deployment_target = '7.0'
+  s.ios.deployment_target = '8.0'
   s.tvos.deployment_target = '9.0'
   s.requires_arc = true
 
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
                           'Social'
   s.libraries        = 'z', 'sqlite3'
 
-  s.dependency 'Bolts/Tasks', '>= 1.9.0'
+  s.dependency 'Bolts/Tasks', '~> 1.9'
   s.dependency 'Parse', '~> 1.15.1'
   s.dependency 'FBSDKCoreKit', '~> 4.24.0'
 
